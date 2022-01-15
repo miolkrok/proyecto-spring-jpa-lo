@@ -4,6 +4,9 @@ import ec.edu.uce.modelo.Paciente;
 
 public interface IPacienteService {
 	
-	void insertarPacienteNuevo(Paciente paciente);
+	void guardarPacienteNuevo(Paciente paciente);
+	void actualizarPacienteNuevo(Paciente paciente);
+	void borrarPacientePorId(Integer id);
+	Paciente busarPacientePorId(Integer id);
 
 }

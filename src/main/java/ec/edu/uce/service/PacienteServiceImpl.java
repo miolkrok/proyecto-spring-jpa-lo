@@ -13,11 +13,30 @@ public class PacienteServiceImpl implements IPacienteService{
 	private IPacienteRepo pacienteRepo;
 
 	@Override
-	public void insertarPacienteNuevo(Paciente paciente) {
+	public void guardarPacienteNuevo(Paciente paciente) {
 		// TODO Auto-generated method stub
 		this.pacienteRepo.insertarPaciente(paciente);
 		
 	}
+
+	@Override
+	public void borrarPacientePorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.pacienteRepo.borrarPaciente(id);
+	}
+
+	@Override
+	public void actualizarPacienteNuevo(Paciente paciente) {
+		// TODO Auto-generated method stub
+		this.pacienteRepo.actualizarPaciente(paciente);
+	}
+
+	@Override
+	public Paciente busarPacientePorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.pacienteRepo.buscarPaciente(id);
+	}
+
 	
 
 }
