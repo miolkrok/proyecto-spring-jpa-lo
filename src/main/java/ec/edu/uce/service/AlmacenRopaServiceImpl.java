@@ -16,5 +16,21 @@ public class AlmacenRopaServiceImpl  implements IAlmacenRopaService{
 		// TODO Auto-generated method stub
 		this.almacenRepo.insertarRopa(almacenRopa);
 	}
+	@Override
+	public void actualizarAlmacenRopaNuevo(AlmacenRopa almacenRopa) {
+		// TODO Auto-generated method stub
+		this.almacenRepo.actualizarRopa(almacenRopa);
+	}
+	@Override
+	public void borrarAlmacenRopaPorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.almacenRepo.borrarRopa(id);
+		
+	}
+	@Override
+	public AlmacenRopa buscarAlmacenRopaPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.almacenRepo.buscarRopa(id);
+	}
 
 }

@@ -15,6 +15,21 @@ public class EmpleadosServiceImpl implements IEmpleadosService{
 		// TODO Auto-generated method stub
 		this.empleadoRepo.insertarEmpleados(empleados);
 	}
+	@Override
+	public void actualizarEmpleadosNuevo(Empleados empleados) {
+		// TODO Auto-generated method stub
+		this.empleadoRepo.actualizarEmpleados(empleados);
+	}
+	@Override
+	public void borrarEmpleadosPorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.empleadoRepo.borrarEmpleados(id);
+	}
+	@Override
+	public Empleados buscarEmpleadosPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.empleadoRepo.buscarEmpleados(id);
+	}
 
 
 

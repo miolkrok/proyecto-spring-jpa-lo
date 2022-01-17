@@ -1,8 +1,10 @@
 package ec.edu.uce.repository;
 
 import ec.edu.uce.modelo.AlmacenRopa;
+import ec.edu.uce.modelo.Paciente;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -26,19 +28,23 @@ public class AlmacenRopaRepoImpl implements IAlmacenRopaRepo{
 	@Override
 	public AlmacenRopa buscarRopa(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		Object[] datoBuscar = new Object[] { id};
+		return this.jdbctemplate.queryForObject("select * from almacenropa where id=?", datoBuscar, new BeanPropertyRowMapper<AlmacenRopa>(AlmacenRopa.class));
 	}
 
 	@Override
 	public void actualizarRopa(AlmacenRopa almacenRopa) {
 		// TODO Auto-generated method stub
-		
+		Object[] datoAActualizar = new Object[] {almacenRopa.getId(),almacenRopa.getNombreAlmacen(),
+				almacenRopa.getNombrePropietario(),almacenRopa.getRopa(), almacenRopa.getPrecio(),almacenRopa.getId()};
+		this.jdbctemplate.update("update almacenropa SET id=?,nombrealmacen= ?,nombrepropietario= ?,ropa =?, precio=? where id=?", datoAActualizar);
 	}
 
 	@Override
 	public void borrarRopa(Integer id) {
 		// TODO Auto-generated method stub
-		
+		Object[] datoABorrar = new Object[] { id };
+		this.jdbctemplate.update("delete from almacenropa where id=?", datoABorrar);
 	}
 
 }

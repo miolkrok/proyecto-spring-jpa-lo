@@ -90,85 +90,161 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		r1.setMedicamentos("paracetamol");
 //		this.gestorService.registrarNuevaConsulta(p1, r1);
 		//////////////////////////ALMACEN DE ROPA/////////////////////////////
-//		AlmacenRopa alma = new AlmacenRopa();
+//	AlmacenRopa alma = new AlmacenRopa();
 //		alma.setId(10);
 //		alma.setNombreAlmacen("suits and dresses");
 //		alma.setNombrePropietario("luis ortiz");
 //		alma.setRopa("vestidos y trajes");
 //		alma.setPrecio(1000);
 //		this.almacenService.insertarRopaNuevo(alma);
+		//////////nuevos metodos/////////
+		//this.almacenService.borrarAlmacenRopaPorId(1);
+//		alma.setId(2);
+//		alma.setNombreAlmacen("suits and dresses10");
+//		alma.setNombrePropietario("luis ortiz");
+//		alma.setRopa("vestidos y trajes");
+//		alma.setPrecio(1000);
+//		this.almacenService.actualizarAlmacenRopaNuevo(alma);
+		
+//		AlmacenRopa a1 = this.almacenService.buscarAlmacenRopaPorId(4);
+//		System.out.println("el almacen que esta buscando es el 4");
+//		System.out.println(a1);
+		
 //////////////////////////CARRERAS/////////////////////////////
-//		Carreras carrera = new Carreras();
-//		carrera.setIdCarrera(10);
+		Carreras carrera = new Carreras();
+//		carrera.setIdCarrera(1);
 //		carrera.setNombreCarrera("MEDICINA");
 //		carrera.setUniversidad("UCE");
 //		carrera.setFacultad("CIENCIAS MEDICAS");
 //		carrera.setCursosCarrera(20);
 //		this.carrerasService.insertarCarrerasNuevo(carrera);
+//		this.carrerasService.borrarCarrerasPorId(1);
+//		carrera.setIdCarrera(1);
+//		carrera.setNombreCarrera("MEDICINA");
+//		carrera.setUniversidad("UCE");
+//		carrera.setFacultad("CIENCIAS MEDICAS");
+//		carrera.setCursosCarrera(20);
+//		this.carrerasService.actualizarCarrerasNuevo(carrera);
+//		Carreras b1 = this.carrerasService.buscarCarrerasPorId(4);
+//		System.out.println("el almacen que esta buscando es el 4");
+//		System.out.println(b1);
 //////////////////////////CARRO/////////////////////////////
-//		Carro carro = new Carro();
+		Carro carro = new Carro();
 //		carro.setIdCarro(10);
 //		carro.setNombrePropietario("roberth charpentier");
 //		carro.setMarca("fiat");
 //		carro.setPlaca("ibg 0045");
 //		carro.setPrecioCarro(12000);
 //		this.carroService.insertarCarroNuevo(carro);
+//		this.carroService.borrarCarroPorId(1);
+//		carro.setIdCarro(1);
+//		carro.setNombrePropietario("roberth charpentier");
+//		carro.setMarca("fiat");
+//		carro.setPlaca("ibg 0045");
+//		carro.setPrecioCarro(12000);
+//		this.carroService.insertarCarroNuevo(carro);
+//		this.carroService.actualizarCarroNuevo(carro);
+//		Carro c1 = this.carroService.buscarCarroPorId(4);
+//		System.out.println("el almacen que esta buscando es el 4");
+//		System.out.println(c1);
 //////////////////////////CLIENTE/////////////////////////////
-//		Cliente cliente = new Cliente();
+		Cliente cliente = new Cliente();
 //		cliente.setIdCliente(9);
 //		cliente.setNombre("CRISTIAN ZARACHO");
 //		cliente.setEmail("CRISZA@gmail.com");
 //		cliente.setCiudad("MANTA");
 //		cliente.setTelefono("2979852");
 //		this.clienteService.insertarClienteNuevo(cliente);
+//		this.clienteService.borrarClientePorId(1);
+//		
+//		this.clienteService.actualizarClienteNuevo(cliente);
+//		Cliente d1 = this.clienteService.buscarClientePorId(4);
+//		System.out.println("el almacen que esta buscando es el 4");
+//		System.out.println(d1);
 //////////////////////////EMPLEADOS/////////////////////////////
-//		Empleados empleado = new Empleados();
+		Empleados empleado = new Empleados();
 //		empleado.setIdEmpleado(10);
 //		empleado.setNombreEmpleado("karla cabrera");
 //		empleado.setTiempoTrabajo("42 meses");
 //		empleado.setDireccion("chillogallo");
 //		empleado.setEmail("karcab@gmail.com");
 //		this.empleadosService.insertarEmpleadosNuevo(empleado);
+//		this.empleadosService.borrarEmpleadosPorId(1);
+//		
+//		this.empleadosService.actualizarEmpleadosNuevo(empleado);
+//		Empleados e1 = this.empleadosService.buscarEmpleadosPorId(4);
+//		System.out.println("el almacen que esta buscando es el 4");
+//		System.out.println(e1);
 //////////////////////////ESTUDIANTE/////////////////////////////
-//		Estudiante estudiante = new Estudiante();
+		Estudiante estudiante = new Estudiante();
 //		estudiante.setIdEstudiante(10);
 //		estudiante.setNombre("jessica");
 //		estudiante.setApellido("alcocer");
 //		estudiante.setCarrera("medicina");
 //		estudiante.setEdad(20);
 //		this.estudianteService.insertarEstudianteNuevo(estudiante);
+//		this.estudianteService.borrarEstudiantePorId(1);
+//		
+//		this.estudianteService.actualizarEstudianteNuevo(estudiante);
+//		Estudiante f1 = this.estudianteService.buscarEstudiantePorId(4);
+//		System.out.println("el almacen que esta buscando es el 4");
+//		System.out.println(f1);
 //////////////////////////MATERIA/////////////////////////////
-//		Materia materia = new Materia();
+		Materia materia = new Materia();
 //		materia.setIdMateria(10);
 //		materia.setMateria("analisis");
 //		materia.setNombreProfesor("jorge lara");
 //		materia.setHorasSemanales(6);
 //		materia.setNumeroEstudiantes(39);
 //		this.materiaService.insertarMateriaNuevo(materia);
+//		this.materiaService.borrarMateriaPorId(1);
+//		
+//		this.materiaService.actualizarMateriaNuevo(materia);
+//		Materia g1 = this.materiaService.buscarMateriaPorId(4);
+//		System.out.println("el almacen que esta buscando es el 4");
+//		System.out.println(g1);
 //////////////////////////PRODUCTOS DE ROPA/////////////////////////////
-//		ProductosRopa product = new ProductosRopa();
+		ProductosRopa product = new ProductosRopa();
 //		product.setIdProducto(9);
 //		product.setNombreProducto("terno");
 //		product.setPrecioRopa(300);
 //		product.setColor("azul marino");
 //		product.setTalla("L");
 //		this.productosService.insertarProductosRopaNuevo(product);
+//		this.productosService.borrarProductosRopaPorId(1);
+//		
+//		this.productosService.actualizarProductosRopaNuevo(product);
+//		ProductosRopa h1 = this.productosService.busarProductosRopaPorId(4);
+//		System.out.println("el almacen que esta buscando es el 4");
+//		System.out.println(h1);
 //////////////////////////PROFESOR/////////////////////////////
-//		Profesor prof = new Profesor();
+		Profesor prof = new Profesor();
 //		prof.setIdProfesor(10);
 //		prof.setNombre("luis");
 //		prof.setApellido("utrillas");
 //		prof.setEmailProfesor("lutri@gmail.com");
 //		prof.setEdad(28);
 //		this.profesorService.insertarProfesorNuevo(prof);
+//		this.profesorService.borrarProfesorPorId(1);
+//		
+//		this.profesorService.actualizarProfesorNuevo(prof);
+//		Profesor i1 = this.profesorService.busarProfesorPorId(4);
+//		System.out.println("el almacen que esta buscando es el 4");
+//		System.out.println(i1);
 //////////////////////////RADIO/////////////////////////////
-//		Radio radio = new Radio();
+		Radio radio = new Radio();
 //		radio.setIdRadio(10);
 //		radio.setNombreRadio("la mega");
 //		radio.setNombreJefe("ariel mega");
 //		radio.setDireccion("gonzalez suarez");
 //		radio.setFrecuencia("103.3 FM");
 //		this.radioService.insertarRadioNuevo(radio);
+//		this.radioService.borrarRadioPorId(1);
+//		
+//		this.radioService.actualizarRadioNuevo(radio);
+//		Radio j1 = this.radioService.buscarRadioPorId(4);
+//		System.out.println("el almacen que esta buscando es el 4");
+//		System.out.println(j1);
 		
 	}
 

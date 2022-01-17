@@ -15,6 +15,21 @@ public class ClienteServiceImpl implements IClienteService {
 		// TODO Auto-generated method stub
 		this.clienteRepo.insertarCliente(cliente);
 	}
+	@Override
+	public void actualizarClienteNuevo(Cliente cliente) {
+		// TODO Auto-generated method stub
+		this.clienteRepo.actualizarCliente(cliente);
+	}
+	@Override
+	public void borrarClientePorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.clienteRepo.borrarCliente(id);
+	}
+	@Override
+	public Cliente buscarClientePorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.clienteRepo.buscarCliente(id);
+	}
 
 
 }

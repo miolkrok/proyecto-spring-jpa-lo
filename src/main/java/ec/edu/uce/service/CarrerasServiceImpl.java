@@ -15,5 +15,20 @@ public class CarrerasServiceImpl implements ICarrerasService{
 		// TODO Auto-generated method stub
 		this.carreraRepo.insertarCarreras(carreras);
 	}
+	@Override
+	public void actualizarCarrerasNuevo(Carreras carreras) {
+		// TODO Auto-generated method stub
+		this.carreraRepo.actualizarCarreras(carreras);
+	}
+	@Override
+	public void borrarCarrerasPorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.carreraRepo.borrarCarreras(id);
+	}
+	@Override
+	public Carreras buscarCarrerasPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.carreraRepo.buscarCarreras(id);
+	}
 
 }
