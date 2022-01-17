@@ -34,7 +34,7 @@ public class EstudianteRepoImpl implements IEstudianteRepo{
 		// TODO Auto-generated method stub
 		Object[] datoAActualizar = new Object[] { estudiante.getIdEstudiante(), estudiante.getNombre(), estudiante.getApellido(),
 				estudiante.getCarrera(),estudiante.getEdad(),estudiante.getIdEstudiante()};
-		this.jdbctemplate.update("update estudiante SET idestudiante=?,nombrealmacen= ?,nombrepropietario= ?,ropa =?, precio=? where idestudiante=?", datoAActualizar);
+		this.jdbctemplate.update("update estudiante SET idestudiante=?,nombre= ?,apellido= ?,carrera =?, edad=? where idestudiante=?", datoAActualizar);
 	}
 
 	@Override

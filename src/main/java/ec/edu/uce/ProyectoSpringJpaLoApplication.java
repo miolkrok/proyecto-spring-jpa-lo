@@ -156,7 +156,11 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		cliente.setTelefono("2979852");
 //		this.clienteService.insertarClienteNuevo(cliente);
 //		this.clienteService.borrarClientePorId(1);
-//		
+//		cliente.setIdCliente(4);
+//		cliente.setNombre("CRISTIAN ZARACHO");
+//		cliente.setEmail("CRISZA@gmail.com");
+//		cliente.setCiudad("MANTA");
+//		cliente.setTelefono("2979852");
 //		this.clienteService.actualizarClienteNuevo(cliente);
 //		Cliente d1 = this.clienteService.buscarClientePorId(4);
 //		System.out.println("el almacen que esta buscando es el 4");
@@ -170,7 +174,11 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		empleado.setEmail("karcab@gmail.com");
 //		this.empleadosService.insertarEmpleadosNuevo(empleado);
 //		this.empleadosService.borrarEmpleadosPorId(1);
-//		
+//		empleado.setIdEmpleado(4);
+//		empleado.setNombreEmpleado("karla cabrera");
+//		empleado.setTiempoTrabajo("42 meses");
+//		empleado.setDireccion("chillogallo");
+//		empleado.setEmail("karcab@gmail.com");
 //		this.empleadosService.actualizarEmpleadosNuevo(empleado);
 //		Empleados e1 = this.empleadosService.buscarEmpleadosPorId(4);
 //		System.out.println("el almacen que esta buscando es el 4");
@@ -184,7 +192,11 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		estudiante.setEdad(20);
 //		this.estudianteService.insertarEstudianteNuevo(estudiante);
 //		this.estudianteService.borrarEstudiantePorId(1);
-//		
+//		estudiante.setIdEstudiante(4);
+//		estudiante.setNombre("jessica");
+//		estudiante.setApellido("alcocer");
+//		estudiante.setCarrera("medicina");
+//		estudiante.setEdad(20);
 //		this.estudianteService.actualizarEstudianteNuevo(estudiante);
 //		Estudiante f1 = this.estudianteService.buscarEstudiantePorId(4);
 //		System.out.println("el almacen que esta buscando es el 4");
@@ -212,7 +224,11 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		product.setTalla("L");
 //		this.productosService.insertarProductosRopaNuevo(product);
 //		this.productosService.borrarProductosRopaPorId(1);
-//		
+//		product.setIdProducto(4);
+//		product.setNombreProducto("terno");
+//		product.setPrecioRopa(300);
+//		product.setColor("azul marino");
+//		product.setTalla("L");
 //		this.productosService.actualizarProductosRopaNuevo(product);
 //		ProductosRopa h1 = this.productosService.busarProductosRopaPorId(4);
 //		System.out.println("el almacen que esta buscando es el 4");
@@ -226,7 +242,11 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		prof.setEdad(28);
 //		this.profesorService.insertarProfesorNuevo(prof);
 //		this.profesorService.borrarProfesorPorId(1);
-//		
+//		prof.setIdProfesor(4);
+//		prof.setNombre("luis");
+//		prof.setApellido("utrillas");
+//		prof.setEmailProfesor("lutri@gmail.com");
+//		prof.setEdad(28);
 //		this.profesorService.actualizarProfesorNuevo(prof);
 //		Profesor i1 = this.profesorService.busarProfesorPorId(4);
 //		System.out.println("el almacen que esta buscando es el 4");
@@ -240,12 +260,17 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		radio.setFrecuencia("103.3 FM");
 //		this.radioService.insertarRadioNuevo(radio);
 //		this.radioService.borrarRadioPorId(1);
-//		
+//		radio.setIdRadio(4);
+//		radio.setNombreRadio("la mega");
+//		radio.setNombreJefe("ariel mega");
+//		radio.setDireccion("gonzalez suarez");
+//		radio.setFrecuencia("103.3 FM");
+//		this.radioService.insertarRadioNuevo(radio);
 //		this.radioService.actualizarRadioNuevo(radio);
 //		Radio j1 = this.radioService.buscarRadioPorId(4);
 //		System.out.println("el almacen que esta buscando es el 4");
 //		System.out.println(j1);
-		
+//		
 	}
 
 }
