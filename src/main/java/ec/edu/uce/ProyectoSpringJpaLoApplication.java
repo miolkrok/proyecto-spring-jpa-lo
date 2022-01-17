@@ -162,13 +162,13 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		prof.setEdad(28);
 //		this.profesorService.insertarProfesorNuevo(prof);
 //////////////////////////RADIO/////////////////////////////
-		Radio radio = new Radio();
-		radio.setIdRadio(10);
-		radio.setNombreRadio("la mega");
-		radio.setNombreJefe("ariel mega");
-		radio.setDireccion("gonzalez suarez");
-		radio.setFrecuencia("103.3 FM");
-		this.radioService.insertarRadioNuevo(radio);
+//		Radio radio = new Radio();
+//		radio.setIdRadio(10);
+//		radio.setNombreRadio("la mega");
+//		radio.setNombreJefe("ariel mega");
+//		radio.setDireccion("gonzalez suarez");
+//		radio.setFrecuencia("103.3 FM");
+//		this.radioService.insertarRadioNuevo(radio);
 		
 	}
 
