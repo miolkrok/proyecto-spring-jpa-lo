@@ -39,5 +39,10 @@ public class Empleados {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	@Override
+	public String toString() {
+		return "Empleados [idEmpleado=" + idEmpleado + ", nombreEmpleado=" + nombreEmpleado + ", tiempoTrabajo="
+				+ tiempoTrabajo + ", direccion=" + direccion + ", email=" + email + "]";
+	}
 
 }

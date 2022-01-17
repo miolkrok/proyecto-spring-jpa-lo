@@ -13,7 +13,11 @@ public class EstudianteRepoImpl implements IEstudianteRepo{
 	@Override
 	public void insertarEstudiante(Estudiante estudiante) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Aqui se va hacer la conexion para guardar el estudiante");
+		Object[] datosAInsertar = new Object[] { estudiante.getIdEstudiante(), estudiante.getNombre(), estudiante.getApellido(),
+				estudiante.getCarrera(),estudiante.getEdad() };
+
+		this.jdbctemplate.update("insert into estudiante(idestudiante,nombre,apellido,carrera,edad)values(?,?,?,?,?)", datosAInsertar);
 	}
 
 	@Override

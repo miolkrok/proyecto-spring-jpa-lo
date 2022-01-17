@@ -38,6 +38,11 @@ public class Estudiante {
 	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
+	@Override
+	public String toString() {
+		return "Estudiante [idEstudiante=" + idEstudiante + ", nombre=" + nombre + ", apellido=" + apellido
+				+ ", carrera=" + carrera + ", edad=" + edad + "]";
+	}
 	
 
 }

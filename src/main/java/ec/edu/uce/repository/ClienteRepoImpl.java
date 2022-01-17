@@ -13,7 +13,11 @@ public class ClienteRepoImpl implements IClienteRepo {
 	@Override
 	public void insertarCliente(Cliente cliente) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Aqui se va hacer la conexion para guardar el cliente");
+		Object[] datosAInsertar = new Object[] { cliente.getIdCliente(), cliente.getNombre(), cliente.getEmail(),
+				cliente.getCiudad(),cliente.getTelefono() };
+
+		this.jdbctemplate.update("insert into cliente(idcliente,nombre,email,ciudad,telefono)values(?,?,?,?,?)", datosAInsertar);
 	}
 
 	@Override

@@ -40,6 +40,11 @@ public class AlmacenRopa {
 	public void setPrecio(Integer precio) {
 		this.precio = precio;
 	}
+	@Override
+	public String toString() {
+		return "AlmacenRopa [id=" + id + ", nombreAlmacen=" + nombreAlmacen + ", nombrePropietario=" + nombrePropietario
+				+ ", ropa=" + ropa + ", precio=" + precio + "]";
+	}
 
 	
 	

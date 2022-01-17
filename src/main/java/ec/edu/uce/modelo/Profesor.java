@@ -38,5 +38,10 @@ public class Profesor {
 	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
+	@Override
+	public String toString() {
+		return "Profesor [idProfesor=" + idProfesor + ", nombre=" + nombre + ", apellido=" + apellido
+				+ ", emailProfesor=" + emailProfesor + ", edad=" + edad + "]";
+	}
 	
 }

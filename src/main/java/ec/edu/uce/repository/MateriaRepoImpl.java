@@ -13,7 +13,11 @@ public class MateriaRepoImpl implements IMateriaRepo{
 	@Override
 	public void insertarMateria(Materia materia) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Aqui se va hacer la conexion para guardar el materia");
+		Object[] datosAInsertar = new Object[] { materia.getIdMateria(), materia.getMateria(), materia.getNombreProfesor(),
+				materia.getHorasSemanales(),materia.getNumeroEstudiantes() };
+
+		this.jdbctemplate.update("insert into materia(idmateria,materia,nombreprofesor,horassemanales,numeroestudiantes)values(?,?,?,?,?)", datosAInsertar);
 	}
 
 	@Override

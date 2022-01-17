@@ -38,6 +38,11 @@ public class Materia {
 	public void setNumeroEstudiantes(Integer numeroEstudiantes) {
 		this.numeroEstudiantes = numeroEstudiantes;
 	}
+	@Override
+	public String toString() {
+		return "Materia [idMateria=" + idMateria + ", materia=" + materia + ", nombreProfesor=" + nombreProfesor
+				+ ", horasSemanales=" + horasSemanales + ", numeroEstudiantes=" + numeroEstudiantes + "]";
+	}
 
 
 }

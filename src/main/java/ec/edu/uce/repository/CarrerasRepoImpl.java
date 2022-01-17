@@ -13,6 +13,12 @@ public class CarrerasRepoImpl implements ICarrerasRepo{
 	@Override
 	public void insertarCarreras(Carreras carreras) {
 		// TODO Auto-generated method stub
+		System.out.println("Aqui se va hacer la conexion para guardar el almacen");
+		Object[] datosAInsertar=new Object[] {carreras.getIdCarrera(),carreras.getNombreCarrera(),
+				carreras.getUniversidad(),carreras.getFacultad(), carreras.getCursosCarrera()};
+		
+		this.jdbctemplate.update("insert into carreras(idcarrera,nombrecarrera,universidad,facultad,cursocarrera)values(?,?,?,?,?)"
+				, datosAInsertar);
 		
 	}
 

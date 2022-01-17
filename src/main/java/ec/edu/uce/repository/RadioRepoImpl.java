@@ -13,7 +13,11 @@ public class RadioRepoImpl implements IRadioRepo{
 	@Override
 	public void insertarRadio(Radio radio) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Aqui se va hacer la conexion para guardar el estudiante");
+		Object[] datosAInsertar = new Object[] { radio.getIdRadio(), radio.getNombreRadio(), radio.getNombreJefe(),
+				radio.getDireccion(),radio.getFrecuencia() };
+
+		this.jdbctemplate.update("insert into radio(idradio,nombreradio,nombrejefe,direccion,frecuencia)values(?,?,?,?,?)", datosAInsertar);
 	}
 
 	@Override

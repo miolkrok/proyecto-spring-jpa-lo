@@ -39,5 +39,10 @@ public class Carreras {
 	public void setCursosCarrera(Integer cursosCarrera) {
 		this.cursosCarrera = cursosCarrera;
 	}
+	@Override
+	public String toString() {
+		return "Carreras [idCarrera=" + idCarrera + ", nombreCarrera=" + nombreCarrera + ", universidad=" + universidad
+				+ ", facultad=" + facultad + ", cursosCarrera=" + cursosCarrera + "]";
+	}
 
 }

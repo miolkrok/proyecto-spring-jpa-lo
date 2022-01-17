@@ -13,6 +13,11 @@ public class EmpleadosRepoImpl implements IEmpleadosRepo{
 	@Override
 	public void insertarEmpleados(Empleados empleados) {
 		// TODO Auto-generated method stub
+		System.out.println("Aqui se va hacer la conexion para guardar el carro");
+		Object[] datosAInsertar = new Object[] { empleados.getIdEmpleado(), empleados.getNombreEmpleado(), empleados.getTiempoTrabajo(),
+				empleados.getDireccion(),empleados.getEmail() };
+
+		this.jdbctemplate.update("insert into empleados(idempleado,nombreempleado,tiempotrabajo,direccion,email)values(?,?,?,?,?)", datosAInsertar);
 		
 	}
 

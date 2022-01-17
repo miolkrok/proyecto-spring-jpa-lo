@@ -13,6 +13,11 @@ public class ProfesorRepoImpl implements IProfesorRepo{
 	@Override
 	public void insertarProfesor(Profesor profesor) {
 		// TODO Auto-generated method stub
+		System.out.println("Aqui se va hacer la conexion para guardar el profesor");
+		Object[] datosAInsertar = new Object[] { profesor.getIdProfesor(), profesor.getNombre(), profesor.getApellido(),
+				profesor.getEmailProfesor(),profesor.getEdad() };
+
+		this.jdbctemplate.update("insert into profesor(idprofesor,nombre,apellido,emailprofesor,edad)values(?,?,?,?,?)", datosAInsertar);
 		
 	}
 

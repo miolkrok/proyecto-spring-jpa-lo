@@ -38,5 +38,10 @@ public class Radio {
 	public void setFrecuencia(String frecuencia) {
 		this.frecuencia = frecuencia;
 	}
+	@Override
+	public String toString() {
+		return "Radio [idRadio=" + idRadio + ", nombreRadio=" + nombreRadio + ", nombreJefe=" + nombreJefe
+				+ ", direccion=" + direccion + ", frecuencia=" + frecuencia + "]";
+	}
 
 }

@@ -13,7 +13,11 @@ public class CarroRepoImpl implements ICarroRepo {
 	@Override
 	public void insertarCarro(Carro carro) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Aqui se va hacer la conexion para guardar el carro");
+		Object[] datosAInsertar = new Object[] { carro.getIdCarro(), carro.getNombrePropietario(), carro.getMarca(),
+				carro.getPlaca(),carro.getPrecioCarro() };
+
+		this.jdbctemplate.update("insert into carro(idcarro,nombrepropietario,marca,placa,preciocarro)values(?,?,?,?,?)", datosAInsertar);
 	}
 
 	@Override

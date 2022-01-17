@@ -18,7 +18,7 @@ public class AlmacenRopaRepoImpl implements IAlmacenRopaRepo{
 		Object[] datosAInsertar=new Object[] {almacenRopa.getId(),almacenRopa.getNombreAlmacen(),
 				almacenRopa.getNombrePropietario(),almacenRopa.getRopa(), almacenRopa.getPrecio()};
 		
-		this.jdbctemplate.update("insert into almacenropa(id,nombrealmacen,nombrepropietario,ropa,precio)values(?,?,?,?)"
+		this.jdbctemplate.update("insert into almacenropa(id,nombrealmacen,nombrepropietario,ropa,precio)values(?,?,?,?,?)"
 				, datosAInsertar);
 		
 	}

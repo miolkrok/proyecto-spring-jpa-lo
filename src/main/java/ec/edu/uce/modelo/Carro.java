@@ -39,6 +39,11 @@ public class Carro {
 	public void setPrecioCarro(Integer precioCarro) {
 		this.precioCarro = precioCarro;
 	}
+	@Override
+	public String toString() {
+		return "Carro [idCarro=" + idCarro + ", nombrePropietario=" + nombrePropietario + ", marca=" + marca
+				+ ", placa=" + placa + ", precioCarro=" + precioCarro + "]";
+	}
 
 
 	

@@ -40,6 +40,11 @@ public class ProductosRopa {
 	public void setTalla(String talla) {
 		this.talla = talla;
 	}
+	@Override
+	public String toString() {
+		return "ProductosRopa [idProducto=" + idProducto + ", nombreProducto=" + nombreProducto + ", precioRopa="
+				+ precioRopa + ", color=" + color + ", talla=" + talla + "]";
+	}
 
 	
 }

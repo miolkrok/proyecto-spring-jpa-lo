@@ -13,7 +13,11 @@ public class ProductosRopaRepoImpl implements IProductosRopaRepo{
 	@Override
 	public void insertarProductosRopa(ProductosRopa productosRopa) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Aqui se va hacer la conexion para guardar el productosRopa");
+		Object[] datosAInsertar = new Object[] { productosRopa.getIdProducto(), productosRopa.getNombreProducto(), productosRopa.getPrecioRopa(),
+				productosRopa.getColor(),productosRopa.getTalla() };
+
+		this.jdbctemplate.update("insert into productosropa(idproducto,nombreproducto,precioropa,color,talla)values(?,?,?,?,?)", datosAInsertar);
 	}
 
 	@Override
