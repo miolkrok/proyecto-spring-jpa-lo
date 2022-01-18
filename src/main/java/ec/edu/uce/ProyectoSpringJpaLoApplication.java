@@ -17,15 +17,25 @@ import ec.edu.uce.modelo.ProductosRopa;
 import ec.edu.uce.modelo.Profesor;
 import ec.edu.uce.modelo.Radio;
 import ec.edu.uce.modelo.Receta;
+import ec.edu.uce.modelo.jpa.Actor;
+import ec.edu.uce.modelo.jpa.Cantante;
+import ec.edu.uce.modelo.jpa.Celular;
+import ec.edu.uce.modelo.jpa.Comediante;
 import ec.edu.uce.modelo.jpa.Guardia;
+import ec.edu.uce.modelo.jpa.Jugador;
+import ec.edu.uce.service.IActorService;
 import ec.edu.uce.service.IAlmacenRopaService;
+import ec.edu.uce.service.ICantanteService;
 import ec.edu.uce.service.ICarrerasService;
 import ec.edu.uce.service.ICarroService;
+import ec.edu.uce.service.ICelularService;
 import ec.edu.uce.service.IClienteService;
+import ec.edu.uce.service.IComedianteService;
 import ec.edu.uce.service.IEmpleadosService;
 import ec.edu.uce.service.IEstudianteService;
 import ec.edu.uce.service.IGestorCitaService;
 import ec.edu.uce.service.IGuardiaService;
+import ec.edu.uce.service.IJugadorService;
 import ec.edu.uce.service.IMateriaService;
 import ec.edu.uce.service.IPacienteService;
 import ec.edu.uce.service.IProductosRopaService;
@@ -61,6 +71,17 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private IGestorCitaService gestorService;
 	@Autowired
 	private IGuardiaService guardiaService;
+	////////////////////////JPA///////////////////////////
+	@Autowired
+	private IActorService actorService;
+	@Autowired
+	private ICantanteService cantanteService;
+	@Autowired
+	private ICelularService celularService;
+	@Autowired
+	private IComedianteService comedianteService;
+	@Autowired
+	private IJugadorService jugadorService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoSpringJpaLoApplication.class, args);
@@ -272,19 +293,74 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		Radio j1 = this.radioService.buscarRadioPorId(4);
 //		System.out.println("el almacen que esta buscando es el 4");
 //		System.out.println(j1);
+//		////////////////////////////////////////////////JPA JPA/////////////////////////////////////////////////////
+//		Guardia gua1 = new Guardia();
+//		gua1.setNombre("pepito");
+//		gua1.setApellido("torres");
+//		gua1.setEdificio("CCNU");
+//		this.guardiaService.guardar(gua1);
 //		
-		Guardia gua1 = new Guardia();
-		gua1.setNombre("pepito");
-		gua1.setApellido("torres");
-		gua1.setEdificio("CCNU");
-		this.guardiaService.guardar(gua1);
+//		Guardia gua2 = new Guardia();
+//		gua2.setId(3);
+//		gua2.setNombre("juanito");
+//		gua2.setApellido("teran");
+//		gua2.setEdificio("villaflora");
+//		this.guardiaService.actualizar(gua2);
+		//////////////////////JPA ACTOR/////////////////////
+//		Actor act = new Actor();
+//		act.setNombre("bob saget");
+//		act.setUltimaPelicula("fuller house");
+//		this.actorService.guardar(act);
+//		
+//		Actor act1 = new Actor();
+//		act.setId(1);
+//		act1.setNombre("angelina jolie");
+//		act1.setUltimaPelicula("eternals");
+//		this.actorService.actualizar(act1);
+		//////////////////////JPA CANTANTE/////////////////////
+//		Cantante cant = new Cantante();
+//		cant.setNombre("juanes");
+//		cant.setGeneroMusical("pop");
+//		this.cantanteService.guardar(cant);
+//		
+//		Cantante cant1 = new Cantante();
+//		cant1.setId(1);
+//		cant1.setNombre("angelina jolie");
+//		cant1.setGeneroMusical("pop");
+//		this.cantanteService.actualizar(cant1);
+		//////////////////////JPA CELULAR/////////////////////
+//		Celular cel = new Celular();
+//		cel.setMarca("camaro");
+//		cel.setPrecio(70000);
+//		this.celularService.guardar(cel);
+//		
+//		Celular cel1 = new Celular();
+//		cel1.setId(1);
+//		cel1.setMarca("mazda");
+//		cel1.setPrecio(50000);
+//		this.celularService.actualizar(cel1);
+//		//////////////////////JPA COMEDIANTE/////////////////////
+		Comediante com = new Comediante();
+		com.setNombre("escorpion");
+		com.setEdad(34);
+		this.comedianteService.guardar(com);
 		
-		Guardia gua2 = new Guardia();
-		gua2.setId(3);
-		gua2.setNombre("juanito");
-		gua2.setApellido("teran");
-		gua2.setEdificio("villaflora");
-		this.guardiaService.actualizar(gua2);
+		Comediante com1 = new Comediante();
+		com1.setId(22);
+		com1.setNombre("platanito");
+		com1.setEdad(45);
+		this.comedianteService.actualizar(com1);
+//		//////////////////////JPA JUGADOR/////////////////////
+//		Jugador jug = new Jugador();
+//		jug.setNombre("leonel messi");
+//		jug.setPosicion("extremo");
+//		this.jugadorService.guardar(jug);
+//		
+//		Jugador jug1 = new Jugador();
+//		jug1.setId(28);
+//		jug1.setNombre("cristiano ronaldo");
+//		jug1.setPosicion("delantero");
+//		this.jugadorService.actualizar(jug1);
 	}
 
 }
