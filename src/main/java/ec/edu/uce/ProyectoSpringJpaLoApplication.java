@@ -17,6 +17,7 @@ import ec.edu.uce.modelo.ProductosRopa;
 import ec.edu.uce.modelo.Profesor;
 import ec.edu.uce.modelo.Radio;
 import ec.edu.uce.modelo.Receta;
+import ec.edu.uce.modelo.jpa.Guardia;
 import ec.edu.uce.service.IAlmacenRopaService;
 import ec.edu.uce.service.ICarrerasService;
 import ec.edu.uce.service.ICarroService;
@@ -24,6 +25,7 @@ import ec.edu.uce.service.IClienteService;
 import ec.edu.uce.service.IEmpleadosService;
 import ec.edu.uce.service.IEstudianteService;
 import ec.edu.uce.service.IGestorCitaService;
+import ec.edu.uce.service.IGuardiaService;
 import ec.edu.uce.service.IMateriaService;
 import ec.edu.uce.service.IPacienteService;
 import ec.edu.uce.service.IProductosRopaService;
@@ -57,7 +59,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private IRadioService radioService;
 	@Autowired
 	private IGestorCitaService gestorService;
-	
+	@Autowired
+	private IGuardiaService guardiaService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoSpringJpaLoApplication.class, args);
@@ -265,12 +268,23 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		radio.setNombreJefe("ariel mega");
 //		radio.setDireccion("gonzalez suarez");
 //		radio.setFrecuencia("103.3 FM");
-//		this.radioService.insertarRadioNuevo(radio);
 //		this.radioService.actualizarRadioNuevo(radio);
 //		Radio j1 = this.radioService.buscarRadioPorId(4);
 //		System.out.println("el almacen que esta buscando es el 4");
 //		System.out.println(j1);
 //		
+		Guardia gua1 = new Guardia();
+		gua1.setNombre("pepito");
+		gua1.setApellido("torres");
+		gua1.setEdificio("CCNU");
+		this.guardiaService.guardar(gua1);
+		
+		Guardia gua2 = new Guardia();
+		gua2.setId(3);
+		gua2.setNombre("juanito");
+		gua2.setApellido("teran");
+		gua2.setEdificio("villaflora");
+		this.guardiaService.actualizar(gua2);
 	}
 
 }
