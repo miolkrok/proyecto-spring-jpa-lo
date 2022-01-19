@@ -82,7 +82,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private IComedianteService comedianteService;
 	@Autowired
 	private IJugadorService jugadorService;
-	
+//	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoSpringJpaLoApplication.class, args);
 	}
@@ -295,11 +295,16 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		System.out.println(j1);
 //		////////////////////////////////////////////////JPA JPA/////////////////////////////////////////////////////
 //		Guardia gua1 = new Guardia();
-//		gua1.setNombre("pepito");
-//		gua1.setApellido("torres");
+//		gua1.setNombre("consola");
+//		gua1.setApellido("MVN");
 //		gua1.setEdificio("CCNU");
-//		this.guardiaService.guardar(gua1);
-//		
+//		this.guardiaService.guardar(gua1); 
+		Guardia g102 = this.guardiaService.buscar(102);
+		System.out.println(g102);
+//		this.guardiaService.borrar(102);
+		
+		Guardia gApellido = this.guardiaService.buscarPorApellido("MVN");
+		System.out.println(gApellido);
 //		Guardia gua2 = new Guardia();
 //		gua2.setId(3);
 //		gua2.setNombre("juanito");
@@ -340,16 +345,16 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		cel1.setPrecio(50000);
 //		this.celularService.actualizar(cel1);
 //		//////////////////////JPA COMEDIANTE/////////////////////
-		Comediante com = new Comediante();
-		com.setNombre("escorpion");
-		com.setEdad(34);
-		this.comedianteService.guardar(com);
-		
-		Comediante com1 = new Comediante();
-		com1.setId(22);
-		com1.setNombre("platanito");
-		com1.setEdad(45);
-		this.comedianteService.actualizar(com1);
+//		Comediante com = new Comediante();
+//		com.setNombre("escorpion");
+//		com.setEdad(34);
+//		this.comedianteService.guardar(com);
+//		
+//		Comediante com1 = new Comediante();
+//		com1.setId(22);
+//		com1.setNombre("platanito");
+//		com1.setEdad(45);
+//		this.comedianteService.actualizar(com1);
 //		//////////////////////JPA JUGADOR/////////////////////
 //		Jugador jug = new Jugador();
 //		jug.setNombre("leonel messi");
