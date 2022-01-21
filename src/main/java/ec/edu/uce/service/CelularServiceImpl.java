@@ -23,4 +23,23 @@ public class CelularServiceImpl implements ICelularService{
 		this.celularRepo.actualizarCelular(celular);
 	}
 
+	@Override
+	public Celular buscar(Integer id) {
+		// TODO Auto-generated method stub
+		return this.celularRepo.buscarCelularPorId(id);
+	}
+
+	@Override
+	public void borrar(Integer id) {
+		// TODO Auto-generated method stub
+		this.celularRepo.borrarCelularPorId(id);
+		
+	}
+
+	@Override
+	public Celular buscarPorMarca(String marca) {
+		// TODO Auto-generated method stub
+		return this.celularRepo.buscarCelularPorMarca(marca);
+	}
+
 }

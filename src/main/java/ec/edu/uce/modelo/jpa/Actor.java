@@ -13,8 +13,8 @@ import javax.persistence.Table;
 public class Actor {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_guardia1")
-	@SequenceGenerator(name="seq_guardia1", sequenceName = "seq_guardia1",allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_actor")
+	@SequenceGenerator(name="seq_actor", sequenceName = "seq_actor",allocationSize = 1)
 	@Column(name= "id")
 	private Integer id;
 	@Column(name= "nombre")

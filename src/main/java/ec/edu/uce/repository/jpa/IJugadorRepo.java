@@ -8,4 +8,5 @@ public interface IJugadorRepo {
 	void actualizarJugador(Jugador jugador);
 	Jugador buscarJugadorPorId(Integer id);
 	void borrarJugadorPorId(Integer id);
+	Jugador buscarJugadorPorNombre(String apellido);
 }

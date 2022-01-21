@@ -8,4 +8,5 @@ public interface ICelularRepo {
 	void actualizarCelular(Celular celular);
 	Celular buscarCelularPorId(Integer id);
 	void borrarCelularPorId(Integer id);
+	Celular buscarCelularPorMarca(String marca);
 }

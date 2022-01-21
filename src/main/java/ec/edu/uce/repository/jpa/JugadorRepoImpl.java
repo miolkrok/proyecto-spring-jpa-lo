@@ -2,6 +2,7 @@ package ec.edu.uce.repository.jpa;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -31,13 +32,24 @@ public class JugadorRepoImpl implements IJugadorRepo{
 	@Override
 	public Jugador buscarJugadorPorId(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.entityManager.find(Jugador.class, id);
 	}
 
 	@Override
 	public void borrarJugadorPorId(Integer id) {
 		// TODO Auto-generated method stub
-		
+		Jugador jugadorABorrar = this.buscarJugadorPorId(id);
+		this.entityManager.remove(jugadorABorrar);
+	}
+
+	@Override
+	public Jugador buscarJugadorPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createQuery("select g from Jugador g where g.nombre=: valor");
+		miQuery.setParameter("valor", nombre);
+		Jugador miJugador = (Jugador) miQuery.getSingleResult();
+		//Guardia miGuardia = (Guardia) miQuery.getResultList();
+		return miJugador;
 	}
 
 }

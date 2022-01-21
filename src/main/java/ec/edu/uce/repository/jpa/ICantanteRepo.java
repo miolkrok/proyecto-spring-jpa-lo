@@ -8,4 +8,5 @@ public interface ICantanteRepo {
 	void actualizarCantante(Cantante cantante);
 	Cantante buscarCantantePorId(Integer id);
 	void borrarCantantePorId(Integer id);
+	Cantante buscarCantantePorNombre(String nombre);
 }

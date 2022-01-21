@@ -5,4 +5,7 @@ import ec.edu.uce.modelo.jpa.Celular;
 public interface ICelularService {
 	void guardar(Celular celular);
 	void actualizar(Celular celular);
+	Celular buscar(Integer id);
+	void borrar(Integer id);
+	Celular buscarPorMarca(String marca);
 }

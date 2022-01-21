@@ -23,4 +23,22 @@ public class ActorServiceImpl implements IActorService {
 		this.actorRepo.actualizarActor(actor);
 	}
 
+	@Override
+	public Actor buscar(Integer id) {
+		// TODO Auto-generated method stub
+		return this.actorRepo.buscarActorPorId(id);
+	}
+
+	@Override
+	public void borrar(Integer id) {
+		// TODO Auto-generated method stub
+		this.actorRepo.borrarActorPorId(id);
+	}
+
+	@Override
+	public Actor buscarPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return this.actorRepo.buscarActorPorNombre(nombre);
+	}
+
 }

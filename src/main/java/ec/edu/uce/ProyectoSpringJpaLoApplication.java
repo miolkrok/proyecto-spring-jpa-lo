@@ -299,12 +299,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		gua1.setApellido("MVN");
 //		gua1.setEdificio("CCNU");
 //		this.guardiaService.guardar(gua1); 
-		Guardia g102 = this.guardiaService.buscar(102);
-		System.out.println(g102);
+//		Guardia g102 = this.guardiaService.buscar(102);
+//		System.out.println(g102);
 //		this.guardiaService.borrar(102);
-		
-		Guardia gApellido = this.guardiaService.buscarPorApellido("MVN");
-		System.out.println(gApellido);
+//		
+//		Guardia gApellido = this.guardiaService.buscarPorApellido("MVN");
+//		System.out.println(gApellido);
 //		Guardia gua2 = new Guardia();
 //		gua2.setId(3);
 //		gua2.setNombre("juanito");
@@ -322,6 +322,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		act1.setNombre("angelina jolie");
 //		act1.setUltimaPelicula("eternals");
 //		this.actorService.actualizar(act1);
+//		Actor a8 = this.actorService.buscar(8);
+//		System.out.println(a8);
+//		this.actorService.borrar(9);
+//		
+//		Actor aNombre = this.actorService.buscarPorNombre("bob saget");
+//		System.out.println(aNombre);
 		//////////////////////JPA CANTANTE/////////////////////
 //		Cantante cant = new Cantante();
 //		cant.setNombre("juanes");
@@ -333,6 +339,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		cant1.setNombre("angelina jolie");
 //		cant1.setGeneroMusical("pop");
 //		this.cantanteService.actualizar(cant1);
+//		Cantante c12 = this.cantanteService.buscar(12);
+//		System.out.println(c12);
+//		this.cantanteService.borrar(11);
+//		
+//		Cantante cNombre = this.cantanteService.buscarPorNombre("madonna");
+//		System.out.println(cNombre);
 		//////////////////////JPA CELULAR/////////////////////
 //		Celular cel = new Celular();
 //		cel.setMarca("camaro");
@@ -344,10 +356,17 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		cel1.setMarca("mazda");
 //		cel1.setPrecio(50000);
 //		this.celularService.actualizar(cel1);
+//		Celular c12 = this.celularService.buscar(19);
+//		System.out.println(c12);
+//		this.celularService.borrar(18);
+//		
+//		Celular celMarca = this.celularService.buscarPorMarca("mazda");
+//		System.out.println(celMarca);
 //		//////////////////////JPA COMEDIANTE/////////////////////
 //		Comediante com = new Comediante();
 //		com.setNombre("escorpion");
 //		com.setEdad(34);
+		
 //		this.comedianteService.guardar(com);
 //		
 //		Comediante com1 = new Comediante();
@@ -355,6 +374,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		com1.setNombre("platanito");
 //		com1.setEdad(45);
 //		this.comedianteService.actualizar(com1);
+//		Comediante c23 = this.comedianteService.buscar(23);
+//		System.out.println(c23);
+//		this.comedianteService.borrar(23);
+//		
+//		Comediante coNombre = this.comedianteService.buscarPorNombre("xhocas");
+//		System.out.println(coNombre);
 //		//////////////////////JPA JUGADOR/////////////////////
 //		Jugador jug = new Jugador();
 //		jug.setNombre("leonel messi");
@@ -366,6 +391,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		jug1.setNombre("cristiano ronaldo");
 //		jug1.setPosicion("delantero");
 //		this.jugadorService.actualizar(jug1);
+		Jugador j31 = this.jugadorService.buscar(31);
+		System.out.println(j31);
+		this.jugadorService.borrar(29);
+		
+		Jugador juNombre = this.jugadorService.buscarPorNombre("cristiano ronaldo");
+		System.out.println(juNombre);
 	}
 
 }

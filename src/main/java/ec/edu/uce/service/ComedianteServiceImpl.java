@@ -23,4 +23,23 @@ public class ComedianteServiceImpl implements IComedianteService{
 		this.comedianteRepo.actualizarComediante(comediante);
 	}
 
+	@Override
+	public Comediante buscar(Integer id) {
+		// TODO Auto-generated method stub
+		return this.comedianteRepo.buscarComediantePorId(id);
+	}
+
+	@Override
+	public void borrar(Integer id) {
+		// TODO Auto-generated method stub
+		this.comedianteRepo.borrarComediantePorId(id);
+		
+	}
+
+	@Override
+	public Comediante buscarPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return this.comedianteRepo.buscarComediantePorNombre(nombre);
+	}
+
 }

@@ -23,4 +23,22 @@ public class CantanteServiceImpl implements ICantanteService{
 		this.cantanteRepo.actualizarCantante(cantante);
 	}
 
+	@Override
+	public Cantante buscar(Integer id) {
+		// TODO Auto-generated method stub
+		return this.cantanteRepo.buscarCantantePorId(id);
+	}
+
+	@Override
+	public void borrar(Integer id) {
+		// TODO Auto-generated method stub
+		this.cantanteRepo.borrarCantantePorId(id);
+	}
+
+	@Override
+	public Cantante buscarPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return this.cantanteRepo.buscarCantantePorNombre(nombre);
+	}
+
 }
