@@ -5,11 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name= "guardia")// Es absoluyamente necesario cundo la tabla tiene un nombre diferente
+//Declarar los query de Guardia
+@NamedQuery(name="Guardia.buscarPorApellido",query ="select g from Guardia g where g.apellido=: valor")
 public class Guardia {
 	
 	

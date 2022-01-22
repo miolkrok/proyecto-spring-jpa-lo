@@ -1,5 +1,7 @@
 package ec.edu.uce;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +25,7 @@ import ec.edu.uce.modelo.jpa.Celular;
 import ec.edu.uce.modelo.jpa.Comediante;
 import ec.edu.uce.modelo.jpa.Guardia;
 import ec.edu.uce.modelo.jpa.Jugador;
+import ec.edu.uce.repository.jpa.GuardiaRepoImpl;
 import ec.edu.uce.service.IActorService;
 import ec.edu.uce.service.IAlmacenRopaService;
 import ec.edu.uce.service.ICantanteService;
@@ -44,6 +47,8 @@ import ec.edu.uce.service.IRadioService;
 
 @SpringBootApplication
 public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
+	private static final Logger LOG =  LoggerFactory.getLogger(GuardiaRepoImpl.class);
+
 
 	@Autowired
 	private IPacienteService pacienteService;
@@ -303,7 +308,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		System.out.println(g102);
 //		this.guardiaService.borrar(102);
 //		
-//		Guardia gApellido = this.guardiaService.buscarPorApellido("MVN");
+//		Guardia gApellido = this.guardiaService.buscarPorApellidoLista("torres");
 //		System.out.println(gApellido);
 //		Guardia gua2 = new Guardia();
 //		gua2.setId(3);
@@ -311,6 +316,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		gua2.setApellido("teran");
 //		gua2.setEdificio("villaflora");
 //		this.guardiaService.actualizar(gua2);
+		//AQUI INSERTAMOS CON TYPED QUERY
+//		Guardia gApellidoType = this.guardiaService.buscarPorApellidoTyped("MVN");
+//		System.out.println(gApellidoType);
+		//NAMED QUERY
+		Guardia gApellidonNamed = this.guardiaService.buscarPorApellidoNamed("MVN");
+		LOG.info("El guardia es: " + gApellidonNamed);
 		//////////////////////JPA ACTOR/////////////////////
 //		Actor act = new Actor();
 //		act.setNombre("bob saget");
@@ -391,12 +402,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		jug1.setNombre("cristiano ronaldo");
 //		jug1.setPosicion("delantero");
 //		this.jugadorService.actualizar(jug1);
-		Jugador j31 = this.jugadorService.buscar(31);
-		System.out.println(j31);
-		this.jugadorService.borrar(29);
-		
-		Jugador juNombre = this.jugadorService.buscarPorNombre("cristiano ronaldo");
-		System.out.println(juNombre);
+//		Jugador j31 = this.jugadorService.buscar(31);
+//		System.out.println(j31);
+//		this.jugadorService.borrar(29);
+//		
+//		Jugador juNombre = this.jugadorService.buscarPorNombre("cristiano ronaldo");
+//		System.out.println(juNombre);
 	}
 
 }

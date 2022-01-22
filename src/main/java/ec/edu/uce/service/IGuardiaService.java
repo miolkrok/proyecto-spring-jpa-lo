@@ -8,4 +8,8 @@ public interface IGuardiaService {
 	Guardia buscar(Integer id);
 	void borrar(Integer id);
 	Guardia buscarPorApellido(String apellido);
+	Guardia buscarPorApellidoTyped(String apellido);
+	Guardia buscarPorApellidoNamed(String apellido);
+	Guardia buscarPorApellidoLista(String apellido);
+
 }
