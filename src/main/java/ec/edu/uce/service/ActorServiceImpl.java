@@ -41,4 +41,16 @@ public class ActorServiceImpl implements IActorService {
 		return this.actorRepo.buscarActorPorNombre(nombre);
 	}
 
+	@Override
+	public Actor buscarPorNombreTyped(String nombre) {
+		// TODO Auto-generated method stub
+		return this.actorRepo.buscarActorPorNombreTyped(nombre);
+	}
+
+	@Override
+	public Actor buscarPorNombreNamed(String nombre) {
+		// TODO Auto-generated method stub
+		return this.actorRepo.buscarActorPorNombreNamed(nombre);
+	}
+
 }

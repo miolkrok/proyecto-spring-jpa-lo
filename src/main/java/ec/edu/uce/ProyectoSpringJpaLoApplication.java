@@ -320,8 +320,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		Guardia gApellidoType = this.guardiaService.buscarPorApellidoTyped("MVN");
 //		System.out.println(gApellidoType);
 		//NAMED QUERY
-		Guardia gApellidonNamed = this.guardiaService.buscarPorApellidoNamed("MVN");
-		LOG.info("El guardia es: " + gApellidonNamed);
+//		Guardia gApellidonNamed = this.guardiaService.buscarPorApellidoNamed("MVN");
+//		LOG.info("El guardia es: " + gApellidonNamed);
 		//////////////////////JPA ACTOR/////////////////////
 //		Actor act = new Actor();
 //		act.setNombre("bob saget");
@@ -339,6 +339,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		Actor aNombre = this.actorService.buscarPorNombre("bob saget");
 //		System.out.println(aNombre);
+		//AQUI INSERTAMOS CON TYPED QUERY
+		Actor aNombreType = this.actorService.buscarPorNombreTyped("bob saget");
+		System.out.println(aNombreType);
+		//NAMED QUERY
+		Actor aNombreNamed = this.actorService.buscarPorNombreNamed("bob saget");
+		LOG.info("El guardia es: " + aNombreNamed);
 		//////////////////////JPA CANTANTE/////////////////////
 //		Cantante cant = new Cantante();
 //		cant.setNombre("juanes");
@@ -356,6 +362,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		Cantante cNombre = this.cantanteService.buscarPorNombre("madonna");
 //		System.out.println(cNombre);
+		//AQUI INSERTAMOS CON TYPED QUERY
+		Cantante cNombreType = this.cantanteService.buscarPorNombreTyped("madonna");
+		System.out.println(cNombreType);
+		//NAMED QUERY
+		Cantante cNombreNamed = this.cantanteService.buscarPorNombreNamed("madonna");
+		LOG.info("El guardia es: " + cNombreNamed);
 		//////////////////////JPA CELULAR/////////////////////
 //		Celular cel = new Celular();
 //		cel.setMarca("camaro");
@@ -373,6 +385,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		Celular celMarca = this.celularService.buscarPorMarca("mazda");
 //		System.out.println(celMarca);
+		//AQUI INSERTAMOS CON TYPED QUERY
+		Celular celMarcaType = this.celularService.buscarPorMarcaTyped("mazda");
+		System.out.println(celMarcaType);
+		//NAMED QUERY
+		Celular gApellidonNamed = this.celularService.buscarPorMarcaNamed("mazda");
+		LOG.info("El guardia es: " + gApellidonNamed);
 //		//////////////////////JPA COMEDIANTE/////////////////////
 //		Comediante com = new Comediante();
 //		com.setNombre("escorpion");
@@ -391,6 +409,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		Comediante coNombre = this.comedianteService.buscarPorNombre("xhocas");
 //		System.out.println(coNombre);
+		//AQUI INSERTAMOS CON TYPED QUERY
+		Comediante coNombreType = this.comedianteService.buscarPorNombreTyped("xhocas");
+		System.out.println(coNombreType);
+		//NAMED QUERY
+		Comediante coNombreNamed = this.comedianteService.buscarPorNombreNamed("xhocas");
+		LOG.info("El guardia es: " + coNombreNamed);
 //		//////////////////////JPA JUGADOR/////////////////////
 //		Jugador jug = new Jugador();
 //		jug.setNombre("leonel messi");
@@ -408,6 +432,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		Jugador juNombre = this.jugadorService.buscarPorNombre("cristiano ronaldo");
 //		System.out.println(juNombre);
+		//AQUI INSERTAMOS CON TYPED QUERY
+		Jugador juNombreType = this.jugadorService.buscarPorNombreTyped("cristiano ronaldo");
+		System.out.println(juNombreType);
+		//NAMED QUERY
+		Jugador juNombreNamed = this.jugadorService.buscarPorNombreNamed("cristiano ronaldo");
+		LOG.info("El guardia es: " + juNombreNamed);
 	}
 
 }

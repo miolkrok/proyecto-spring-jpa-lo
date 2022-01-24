@@ -13,10 +13,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "guardia") // Es absoluyamente necesario cundo la tabla tiene un nombre diferente
 //Declarar los query de Guardia
-@NamedQueries({
-		@NamedQuery(name = "Guardia.buscarPorApellido", query = "select g from Guardia g where g.apellido=: valor"),
-		@NamedQuery(name = "Guardia.buscarPorApellido1", query = "select g from Guardia g where g.apellido=: valor"),
-		@NamedQuery(name = "Guardia.buscarPorApellido2", query = "select g from Guardia g where g.apellido=: valor") })
+//@NamedQueries({
+//		@NamedQuery(name = "Guardia.buscarPorApellido", query = "select g from Guardia g where g.apellido=: valor"),
+//		@NamedQuery(name = "Guardia.buscarPorApellido1", query = "select g from Guardia g where g.apellido=: valor"),
+//		@NamedQuery(name = "Guardia.buscarPorApellido2", query = "select g from Guardia g where g.apellido=: valor") })
 @NamedQuery(name = "Guardia.buscarPorApellido", query = "select g from Guardia g where g.apellido=: valor")
 public class Guardia {
 

@@ -8,4 +8,6 @@ public interface IJugadorService {
 	Jugador buscar(Integer id);
 	void borrar(Integer id);
 	Jugador buscarPorNombre(String nombre);
+	Jugador buscarPorNombreTyped(String nombre);
+	Jugador buscarPorNombreNamed(String nombre);
 }

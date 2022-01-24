@@ -8,4 +8,6 @@ public interface ICantanteService {
 	Cantante buscar(Integer id);
 	void borrar(Integer id);
 	Cantante buscarPorNombre(String nombre);
+	Cantante buscarPorNombreTyped(String nombre);
+	Cantante buscarPorNombreNamed(String nombre);
 }

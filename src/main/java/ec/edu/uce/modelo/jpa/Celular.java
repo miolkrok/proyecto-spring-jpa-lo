@@ -5,11 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name= "celular")
+@NamedQuery(name = "Celular.buscarPorMarca", query = "select g from Celular g where g.marca=: valor")
 public class Celular {
 	
 	@Id

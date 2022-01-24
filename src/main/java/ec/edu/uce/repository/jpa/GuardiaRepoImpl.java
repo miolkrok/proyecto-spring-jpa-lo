@@ -1,7 +1,6 @@
 package ec.edu.uce.repository.jpa;
 
 import java.util.List;
-import java.util.logging.LogManager;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -22,22 +21,8 @@ import ec.edu.uce.modelo.jpa.Guardia;
  * @author Luis
  *
  */
-/**
- * @author Luis
- *
- */
-/**
- * @author Luis
- *
- */
-/**
- * @author Luis
- *
- */
-/**
- * @author Luis
- *
- */
+
+
 @Repository
 @Transactional
 public class GuardiaRepoImpl implements IGuardiaRepo {

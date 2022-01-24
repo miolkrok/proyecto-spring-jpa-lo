@@ -8,4 +8,6 @@ public interface IActorService {
 	Actor buscar(Integer id);
 	void borrar(Integer id);
 	Actor buscarPorNombre(String nombre);
+	Actor buscarPorNombreTyped(String nombre);
+	Actor buscarPorNombreNamed(String nombre);
 }

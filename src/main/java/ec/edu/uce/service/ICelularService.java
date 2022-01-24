@@ -8,4 +8,6 @@ public interface ICelularService {
 	Celular buscar(Integer id);
 	void borrar(Integer id);
 	Celular buscarPorMarca(String marca);
+	Celular buscarPorMarcaTyped(String marca);
+	Celular buscarPorMarcaNamed(String marca);
 }

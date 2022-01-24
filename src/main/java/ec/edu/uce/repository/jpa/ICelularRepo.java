@@ -9,4 +9,6 @@ public interface ICelularRepo {
 	Celular buscarCelularPorId(Integer id);
 	void borrarCelularPorId(Integer id);
 	Celular buscarCelularPorMarca(String marca);
+	Celular buscarCelularPorMarcaTyped(String marca);
+	Celular buscarCelularPorMarcaNamed(String marca);
 }

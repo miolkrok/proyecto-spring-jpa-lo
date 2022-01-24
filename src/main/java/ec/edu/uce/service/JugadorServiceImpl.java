@@ -41,4 +41,16 @@ public class JugadorServiceImpl implements IJugadorService{
 		return this.jugadorRepo.buscarJugadorPorNombre(nombre);
 	}
 
+	@Override
+	public Jugador buscarPorNombreTyped(String nombre) {
+		// TODO Auto-generated method stub
+		return this.jugadorRepo.buscarJugadorPorNombreTyped(nombre);
+	}
+
+	@Override
+	public Jugador buscarPorNombreNamed(String nombre) {
+		// TODO Auto-generated method stub
+		return this.jugadorRepo.buscarJugadorPorNombreNamed(nombre);
+	}
+
 }

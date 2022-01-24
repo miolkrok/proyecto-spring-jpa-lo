@@ -9,4 +9,7 @@ public interface IActorRepo {
 	Actor buscarActorPorId(Integer id);
 	void borrarActorPorId(Integer id);
 	Actor buscarActorPorNombre(String nombre);
+	Actor buscarActorPorNombreTyped(String nombre);
+	Actor buscarActorPorNombreNamed(String nombre);
+	
 }

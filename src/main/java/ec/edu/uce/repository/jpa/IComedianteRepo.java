@@ -10,4 +10,6 @@ public interface IComedianteRepo {
 	Comediante buscarComediantePorId(Integer id);
 	void borrarComediantePorId(Integer id);
 	Comediante buscarComediantePorNombre(String nombre);
+	Comediante buscarComediantePorNombreTyped(String nombre);
+	Comediante buscarComediantePorNombreNamed(String nombre);
 }
