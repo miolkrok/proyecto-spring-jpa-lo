@@ -54,4 +54,10 @@ public class CelularServiceImpl implements ICelularService{
 		return this.celularRepo.buscarCelularPorMarcaNamed(marca);
 	}
 
+	@Override
+	public Celular buscarPorMarcaNative(String marca) {
+		// TODO Auto-generated method stub
+		return this.celularRepo.buscarCelularPorMarcaNative(marca);
+	}
+
 }

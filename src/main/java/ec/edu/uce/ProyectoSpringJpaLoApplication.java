@@ -348,6 +348,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		//NAMED QUERY
 //		Actor aNombreNamed = this.actorService.buscarPorNombreNamed("bob saget");
 //		LOG.info("El guardia es: " + aNombreNamed);
+		Actor aNombreNative = this.actorService.buscarPorNombreNative("bob saget");
+		LOG.info("El Actor es: " + aNombreNative);
 		//////////////////////JPA CANTANTE/////////////////////
 //		Cantante cant = new Cantante();
 //		cant.setNombre("juanes");
@@ -363,6 +365,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		System.out.println(c12);
 //		this.cantanteService.borrar(11);
 //		
+		
 //		Cantante cNombre = this.cantanteService.buscarPorNombre("madonna");
 //		System.out.println(cNombre);
 		//AQUI INSERTAMOS CON TYPED QUERY
@@ -371,6 +374,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		//NAMED QUERY
 //		Cantante cNombreNamed = this.cantanteService.buscarPorNombreNamed("madonna");
 //		LOG.info("El guardia es: " + cNombreNamed);
+		Cantante cNombreNative = this.cantanteService.buscarPorNombreNative("madonna");
+		LOG.info("El Cantante es: " + cNombreNative);
 		//////////////////////JPA CELULAR/////////////////////
 //		Celular cel = new Celular();
 //		cel.setMarca("camaro");
@@ -394,6 +399,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		//NAMED QUERY
 //		Celular gApellidonNamed = this.celularService.buscarPorMarcaNamed("mazda");
 //		LOG.info("El guardia es: " + gApellidonNamed);
+		Celular celMarcaNative = this.celularService.buscarPorMarcaNative("mazda");
+		LOG.info("El Celular es: " + celMarcaNative);
 //		//////////////////////JPA COMEDIANTE/////////////////////
 //		Comediante com = new Comediante();
 //		com.setNombre("escorpion");
@@ -418,6 +425,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		//NAMED QUERY
 //		Comediante coNombreNamed = this.comedianteService.buscarPorNombreNamed("xhocas");
 //		LOG.info("El guardia es: " + coNombreNamed);
+		Comediante coNombreNative = this.comedianteService.buscarPorNombreNative("xhocas");
+		LOG.info("El Comediante es: " + coNombreNative);
 //		//////////////////////JPA JUGADOR/////////////////////
 //		Jugador jug = new Jugador();
 //		jug.setNombre("leonel messi");
@@ -441,6 +450,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		//NAMED QUERY
 //		Jugador juNombreNamed = this.jugadorService.buscarPorNombreNamed("cristiano ronaldo");
 //		LOG.info("El guardia es: " + juNombreNamed);
+		Jugador juNombreNative = this.jugadorService.buscarPorNombreNative("cristiano ronaldo");
+		LOG.info("El Jugador es: " + juNombreNative);
 	}
 
 }

@@ -72,4 +72,13 @@ public class JugadorRepoImpl implements IJugadorRepo{
 		return (Jugador) miQuery.getSingleResult();
 	}
 
+	@Override
+	public Jugador buscarJugadorPorNombreNative(String nombre) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNativeQuery("select * from Jugador g where g.nombre=:valor", Jugador.class);
+		miQuery.setParameter("valor", nombre);
+		
+		return (Jugador) miQuery.getSingleResult();
+	}
+
 }

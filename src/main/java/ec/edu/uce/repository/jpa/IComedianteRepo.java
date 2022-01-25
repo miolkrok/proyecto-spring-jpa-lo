@@ -12,4 +12,5 @@ public interface IComedianteRepo {
 	Comediante buscarComediantePorNombre(String nombre);
 	Comediante buscarComediantePorNombreTyped(String nombre);
 	Comediante buscarComediantePorNombreNamed(String nombre);
+	Comediante buscarComediantePorNombreNative(String nombre);
 }

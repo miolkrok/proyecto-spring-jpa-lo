@@ -72,4 +72,13 @@ public class CantanteRepoImpl implements ICantanteRepo {
 		return (Cantante) miQuery.getSingleResult();
 	}
 
+	@Override
+	public Cantante buscarCantantePorNombreNative(String nombre) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNativeQuery("select * from Cantante g where g.nombre=:valor", Cantante.class);
+		miQuery.setParameter("valor", nombre);
+		
+		return (Cantante) miQuery.getSingleResult();
+	}
+
 }
