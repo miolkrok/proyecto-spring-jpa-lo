@@ -71,6 +71,15 @@ public class ActorRepoImpl implements IActorRepo {
 		return (Actor) miQuery.getSingleResult();
 	}
 
+	@Override
+	public Actor buscarActorPorNombreNative(String nombre) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNativeQuery("select * from Actor g where g.nombre=:valor", Actor.class);
+		miQuery.setParameter("valor", nombre);
+		
+		return (Actor) miQuery.getSingleResult();
+	}
+
 
 
 }

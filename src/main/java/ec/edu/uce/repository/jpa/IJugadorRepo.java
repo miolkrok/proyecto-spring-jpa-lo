@@ -11,4 +11,5 @@ public interface IJugadorRepo {
 	Jugador buscarJugadorPorNombre(String nombre);
 	Jugador buscarJugadorPorNombreTyped(String nombre);
 	Jugador buscarJugadorPorNombreNamed(String nombre);
+	Jugador buscarJugadorPorNombreNative(String nombre);
 }

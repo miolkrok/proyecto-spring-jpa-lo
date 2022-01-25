@@ -10,4 +10,5 @@ public interface ICantanteService {
 	Cantante buscarPorNombre(String nombre);
 	Cantante buscarPorNombreTyped(String nombre);
 	Cantante buscarPorNombreNamed(String nombre);
+	Cantante buscarPorNombreNative(String nombre);
 }
