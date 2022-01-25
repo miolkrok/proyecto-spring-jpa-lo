@@ -11,4 +11,5 @@ public interface ICantanteRepo {
 	Cantante buscarCantantePorNombre(String nombre);
 	Cantante buscarCantantePorNombreTyped(String nombre);
 	Cantante buscarCantantePorNombreNamed(String nombre);
+	Cantante buscarCantantePorNombreNative(String nombre);
 }

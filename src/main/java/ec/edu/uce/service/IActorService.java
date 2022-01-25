@@ -10,4 +10,5 @@ public interface IActorService {
 	Actor buscarPorNombre(String nombre);
 	Actor buscarPorNombreTyped(String nombre);
 	Actor buscarPorNombreNamed(String nombre);
+	Actor buscarPorNombreNative(String nombre);
 }

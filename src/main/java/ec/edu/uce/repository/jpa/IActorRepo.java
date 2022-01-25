@@ -11,5 +11,6 @@ public interface IActorRepo {
 	Actor buscarActorPorNombre(String nombre);
 	Actor buscarActorPorNombreTyped(String nombre);
 	Actor buscarActorPorNombreNamed(String nombre);
+	Actor buscarActorPorNombreNative(String nombre);
 	
 }

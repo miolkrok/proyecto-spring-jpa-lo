@@ -72,4 +72,13 @@ public class CelularRepoImpl implements ICelularRepo {
 		return (Celular) miQuery.getSingleResult();
 	}
 
+	@Override
+	public Celular buscarCelularPorMarcaNative(String marca) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNativeQuery("select * from Celular g where g.marca=:valor", Celular.class);
+		miQuery.setParameter("valor", marca);
+		
+		return (Celular) miQuery.getSingleResult();
+	}
+
 }

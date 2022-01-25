@@ -73,4 +73,13 @@ public class ComedianteRepoImpl implements IComedianteRepo{
 		return (Comediante) miQuery.getSingleResult();
 	}
 
+	@Override
+	public Comediante buscarComediantePorNombreNative(String nombre) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNativeQuery("select * from Comediante g where g.nombre=:valor", Comediante.class);
+		miQuery.setParameter("valor", nombre);
+		
+		return (Comediante) miQuery.getSingleResult();
+	}
+
 }

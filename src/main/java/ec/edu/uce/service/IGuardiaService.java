@@ -10,6 +10,7 @@ public interface IGuardiaService {
 	Guardia buscarPorApellido(String apellido);
 	Guardia buscarPorApellidoTyped(String apellido);
 	Guardia buscarPorApellidoNamed(String apellido);
+	Guardia buscarPorApellidoNative(String apellido);
 	Guardia buscarPorApellidoLista(String apellido);
 
 }
