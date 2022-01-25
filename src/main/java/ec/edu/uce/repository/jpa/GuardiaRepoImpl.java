@@ -112,6 +112,16 @@ public class GuardiaRepoImpl implements IGuardiaRepo {
 		
 	}
 
+	@Override
+	public Guardia buscarGuardiaPorApellidoNative(String apellido) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNativeQuery("select * from guardia g where g.apellido=:valor", Guardia.class);
+		miQuery.setParameter("valor", apellido);
+		
+		return (Guardia) miQuery.getSingleResult();
+	}
+		
+
 
 
 
