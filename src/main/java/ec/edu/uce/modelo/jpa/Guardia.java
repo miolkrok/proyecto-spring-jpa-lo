@@ -27,7 +27,7 @@ public class Guardia {
 	private Integer id;
 
 	@Column(name = "nombre")
-	private String nombre;
+	private String nombre;//taller 21
 
 	@Column(name = "apellido")
 	private String apellido;
