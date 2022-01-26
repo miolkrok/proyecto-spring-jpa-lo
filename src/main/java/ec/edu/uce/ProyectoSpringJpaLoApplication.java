@@ -1,5 +1,7 @@
 package ec.edu.uce;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -322,9 +324,25 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 		//NAMED QUERY
 //		Guardia gApellidonNamed = this.guardiaService.buscarPorApellidoNamed("MVN");
 //		LOG.info("El guardia es: " + gApellidonNamed);
+		///NATIVE QUERY
+//		Guardia gApellidoNative = this.guardiaService.buscarPorApellidoNative("MVN");
+//		LOG.info("El guardia es: " + gApellidoNative);
+		//NAMED NATIVE QUERY
+//		Guardia gApellidoNamedNative = this.guardiaService.buscarPorApellidoNamedNative("MVN");
+//		LOG.info("El guardia es (NAMED SQL NATIVE): " + gApellidoNamedNative);
+		//CRITERIA API
+//		Guardia gApellidoCriteria = this.guardiaService.buscarPorApellidoCriteriaAPI("MVN");
+//		LOG.info("El guardia es (CRITERIA): " + gApellidoCriteria);
+		//CRITERIA API AND
+//		Guardia gApellidoCriteriaAnd = this.guardiaService.buscarPorApellidoCriteriaAPIAnd("MVN","CCNU");
+//		LOG.info("El guardia es (CRITERIA AND): " + gApellidoCriteriaAnd);
+		//CRITERIA API OR
+		List<Guardia> listaGuardiaOr = this.guardiaService.buscarPorApellidoCriteriaAPIOr("MVN","villaflora");
+		for(Guardia g : listaGuardiaOr) {
+			LOG.info("El guardia es (CRITERIA OR): " + g);
+		}
 		
-		Guardia gApellidoNative = this.guardiaService.buscarPorApellidoNative("MVN");
-		LOG.info("El guardia es: " + gApellidoNative);
+	
 		//////////////////////JPA ACTOR/////////////////////
 //		Actor act = new Actor();
 //		act.setNombre("bob saget");
@@ -348,8 +366,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		//NAMED QUERY
 //		Actor aNombreNamed = this.actorService.buscarPorNombreNamed("bob saget");
 //		LOG.info("El guardia es: " + aNombreNamed);
-		Actor aNombreNative = this.actorService.buscarPorNombreNative("bob saget");
-		LOG.info("El Actor es: " + aNombreNative);
+//		Actor aNombreNative = this.actorService.buscarPorNombreNative("bob saget");
+//		LOG.info("El Actor es: " + aNombreNative);
 		//////////////////////JPA CANTANTE/////////////////////
 //		Cantante cant = new Cantante();
 //		cant.setNombre("juanes");
@@ -374,8 +392,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		//NAMED QUERY
 //		Cantante cNombreNamed = this.cantanteService.buscarPorNombreNamed("madonna");
 //		LOG.info("El guardia es: " + cNombreNamed);
-		Cantante cNombreNative = this.cantanteService.buscarPorNombreNative("madonna");
-		LOG.info("El Cantante es: " + cNombreNative);
+//		Cantante cNombreNative = this.cantanteService.buscarPorNombreNative("madonna");
+//		LOG.info("El Cantante es: " + cNombreNative);
 		//////////////////////JPA CELULAR/////////////////////
 //		Celular cel = new Celular();
 //		cel.setMarca("camaro");
@@ -399,8 +417,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		//NAMED QUERY
 //		Celular gApellidonNamed = this.celularService.buscarPorMarcaNamed("mazda");
 //		LOG.info("El guardia es: " + gApellidonNamed);
-		Celular celMarcaNative = this.celularService.buscarPorMarcaNative("mazda");
-		LOG.info("El Celular es: " + celMarcaNative);
+//		Celular celMarcaNative = this.celularService.buscarPorMarcaNative("mazda");
+//		LOG.info("El Celular es: " + celMarcaNative);
 //		//////////////////////JPA COMEDIANTE/////////////////////
 //		Comediante com = new Comediante();
 //		com.setNombre("escorpion");
@@ -425,8 +443,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		//NAMED QUERY
 //		Comediante coNombreNamed = this.comedianteService.buscarPorNombreNamed("xhocas");
 //		LOG.info("El guardia es: " + coNombreNamed);
-		Comediante coNombreNative = this.comedianteService.buscarPorNombreNative("xhocas");
-		LOG.info("El Comediante es: " + coNombreNative);
+//		Comediante coNombreNative = this.comedianteService.buscarPorNombreNative("xhocas");
+//		LOG.info("El Comediante es: " + coNombreNative);
 //		//////////////////////JPA JUGADOR/////////////////////
 //		Jugador jug = new Jugador();
 //		jug.setNombre("leonel messi");
@@ -450,8 +468,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		//NAMED QUERY
 //		Jugador juNombreNamed = this.jugadorService.buscarPorNombreNamed("cristiano ronaldo");
 //		LOG.info("El guardia es: " + juNombreNamed);
-		Jugador juNombreNative = this.jugadorService.buscarPorNombreNative("cristiano ronaldo");
-		LOG.info("El Jugador es: " + juNombreNative);
+//		Jugador juNombreNative = this.jugadorService.buscarPorNombreNative("cristiano ronaldo");
+//		LOG.info("El Jugador es: " + juNombreNative);
 	}
 
 }
