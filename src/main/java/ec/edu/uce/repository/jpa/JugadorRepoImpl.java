@@ -4,6 +4,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -79,6 +83,37 @@ public class JugadorRepoImpl implements IJugadorRepo{
 		miQuery.setParameter("valor", nombre);
 		
 		return (Jugador) miQuery.getSingleResult();
+	}
+
+	@Override
+	public Jugador buscarJugadorPorNombreNamedNative(String nombre) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNamedQuery("Jugador.buscarPorNombreNamedNative", Jugador.class);
+		miQuery.setParameter("valor", nombre);
+		
+		return (Jugador) miQuery.getSingleResult();
+	}
+
+	@Override
+	public Jugador buscarJugadorPorNombreCriteriaAPI(String nombre) {
+		// TODO Auto-generated method stub
+		CriteriaBuilder myCriteria = this.entityManager.getCriteriaBuilder(); 
+		CriteriaQuery<Jugador> miQuery = myCriteria.createQuery(Jugador.class);
+		
+		//select * from tabla where 
+		//Aqui empiezo a construir mi SQL
+		Root<Jugador> myTable = miQuery.from(Jugador.class);
+		
+		//los where en criteria API se los conoce como predicados
+		//select * from Guardia g where g.apellido=: valor
+		Predicate p1 = myCriteria.equal(myTable.get("nombre"), nombre);
+		 
+		//Empezamos a conformar el select 
+		miQuery.select(myTable).where(p1);
+		
+		TypedQuery<Jugador> typedQuery = this.entityManager.createQuery(miQuery);
+		
+		return typedQuery.getSingleResult();
 	}
 
 }

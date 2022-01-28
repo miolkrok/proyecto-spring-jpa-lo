@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -12,6 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name= "cantante")
 @NamedQuery(name = "Cantante.buscarPorNombre", query = "select g from Cantante g where g.nombre=: valor")
+@NamedNativeQuery(name="Cantante.buscarPorNombreNamedNative",query="select * from Cantante g where g.nombre=:valor", resultClass = Cantante.class)
 public class Cantante {
 	
 	@Id

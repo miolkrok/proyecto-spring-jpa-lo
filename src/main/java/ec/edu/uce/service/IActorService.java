@@ -11,4 +11,6 @@ public interface IActorService {
 	Actor buscarPorNombreTyped(String nombre);
 	Actor buscarPorNombreNamed(String nombre);
 	Actor buscarPorNombreNative(String nombre);
+	Actor buscarPorNombreNamedNative(String nombre);
+	Actor buscarPorNombreCriteriaAPI(String nombre);
 }

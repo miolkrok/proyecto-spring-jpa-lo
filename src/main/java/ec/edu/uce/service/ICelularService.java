@@ -11,4 +11,6 @@ public interface ICelularService {
 	Celular buscarPorMarcaTyped(String marca);
 	Celular buscarPorMarcaNamed(String marca);
 	Celular buscarPorMarcaNative(String marca);
+	Celular buscarPorMarcaNamedNative(String marca);
+	Celular buscarPorMarcaCriteriaAPI(String marca);
 }

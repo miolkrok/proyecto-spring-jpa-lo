@@ -337,11 +337,11 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		Guardia gApellidoCriteriaAnd = this.guardiaService.buscarPorApellidoCriteriaAPIAnd("MVN","CCNU");
 //		LOG.info("El guardia es (CRITERIA AND): " + gApellidoCriteriaAnd);
 		//CRITERIA API OR
-		List<Guardia> listaGuardiaOr = this.guardiaService.buscarPorApellidoCriteriaAPIOr("MVN","villaflora");
-		for(Guardia g : listaGuardiaOr) {
-			LOG.info("El guardia es (CRITERIA OR): " + g);
-		}
-		
+//		List<Guardia> listaGuardiaOr = this.guardiaService.buscarPorApellidoCriteriaAPIOr("MVN","villaflora");
+//		for(Guardia g : listaGuardiaOr) {
+//			LOG.info("El guardia es (CRITERIA OR): " + g);
+//		}
+//		
 	
 		//////////////////////JPA ACTOR/////////////////////
 //		Actor act = new Actor();
@@ -368,6 +368,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		LOG.info("El guardia es: " + aNombreNamed);
 //		Actor aNombreNative = this.actorService.buscarPorNombreNative("bob saget");
 //		LOG.info("El Actor es: " + aNombreNative);
+		//NAMED NATIVE QUERY
+		Actor aNombreNamedNative = this.actorService.buscarPorNombreNamedNative("bob saget");
+		LOG.info("El Actor es (NAMED SQL NATIVE): " + aNombreNamedNative);
+		//CRITERIA API
+		Actor aNombreCriteria = this.actorService.buscarPorNombreCriteriaAPI("bob saget");
+		LOG.info("El Actor es (CRITERIA): " + aNombreCriteria);
 		//////////////////////JPA CANTANTE/////////////////////
 //		Cantante cant = new Cantante();
 //		cant.setNombre("juanes");
@@ -394,6 +400,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		LOG.info("El guardia es: " + cNombreNamed);
 //		Cantante cNombreNative = this.cantanteService.buscarPorNombreNative("madonna");
 //		LOG.info("El Cantante es: " + cNombreNative);
+		//NAMED NATIVE QUERY
+		Cantante cNombreNamedNative = this.cantanteService.buscarPorNombreNamedNative("madonna");
+		LOG.info("El Cantante es (NAMED SQL NATIVE): " + cNombreNamedNative);
+		//CRITERIA API
+		Cantante cNombreCriteria = this.cantanteService.buscarPorNombreCriteriaAPI("madonna");
+		LOG.info("El Cantante es (CRITERIA): " + cNombreCriteria);
 		//////////////////////JPA CELULAR/////////////////////
 //		Celular cel = new Celular();
 //		cel.setMarca("camaro");
@@ -419,6 +431,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		LOG.info("El guardia es: " + gApellidonNamed);
 //		Celular celMarcaNative = this.celularService.buscarPorMarcaNative("mazda");
 //		LOG.info("El Celular es: " + celMarcaNative);
+		//NAMED NATIVE QUERY
+		Celular celNombreNamedNative = this.celularService.buscarPorMarcaNamedNative("mazda");
+		LOG.info("El Celular es (NAMED SQL NATIVE): " + celNombreNamedNative);
+		//CRITERIA API
+		Celular celNombreCriteria = this.celularService.buscarPorMarcaCriteriaAPI("mazda");
+		LOG.info("El Celular es (CRITERIA): " + celNombreCriteria);
 //		//////////////////////JPA COMEDIANTE/////////////////////
 //		Comediante com = new Comediante();
 //		com.setNombre("escorpion");
@@ -445,6 +463,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		LOG.info("El guardia es: " + coNombreNamed);
 //		Comediante coNombreNative = this.comedianteService.buscarPorNombreNative("xhocas");
 //		LOG.info("El Comediante es: " + coNombreNative);
+		//NAMED NATIVE QUERY
+		Comediante coNombreNamedNative = this.comedianteService.buscarPorNombreNamedNative("xhocas");
+		LOG.info("El Comediante es (NAMED SQL NATIVE): " + coNombreNamedNative);
+		//CRITERIA API
+		Comediante coNombreCriteria = this.comedianteService.buscarPorNombreCriteriaAPI("xhocas");
+		LOG.info("El Comediante es (CRITERIA): " + coNombreCriteria);
 //		//////////////////////JPA JUGADOR/////////////////////
 //		Jugador jug = new Jugador();
 //		jug.setNombre("leonel messi");
@@ -470,6 +494,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		LOG.info("El guardia es: " + juNombreNamed);
 //		Jugador juNombreNative = this.jugadorService.buscarPorNombreNative("cristiano ronaldo");
 //		LOG.info("El Jugador es: " + juNombreNative);
+		//NAMED NATIVE QUERY
+		Jugador juNombreNamedNative = this.jugadorService.buscarPorNombreNamedNative("cristiano ronaldo");
+		LOG.info("El Jugador es (NAMED SQL NATIVE): " + juNombreNamedNative);
+		//CRITERIA API
+		Jugador juNombreCriteria = this.jugadorService.buscarPorNombreCriteriaAPI("cristiano ronaldo");
+		LOG.info("El Jugador es (CRITERIA): " + juNombreCriteria);
 	}
 
 }

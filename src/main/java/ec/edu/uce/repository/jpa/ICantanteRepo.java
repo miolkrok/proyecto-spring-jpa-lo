@@ -1,5 +1,6 @@
 package ec.edu.uce.repository.jpa;
 
+import ec.edu.uce.modelo.jpa.Actor;
 import ec.edu.uce.modelo.jpa.Cantante;
 
 public interface ICantanteRepo {
@@ -12,4 +13,6 @@ public interface ICantanteRepo {
 	Cantante buscarCantantePorNombreTyped(String nombre);
 	Cantante buscarCantantePorNombreNamed(String nombre);
 	Cantante buscarCantantePorNombreNative(String nombre);
+	Cantante buscarCantantePorNombreNamedNative(String nombre);
+	Cantante buscarCantantePorNombreCriteriaAPI(String nombre);
 }

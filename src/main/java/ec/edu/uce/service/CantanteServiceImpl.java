@@ -60,4 +60,16 @@ public class CantanteServiceImpl implements ICantanteService{
 		return this.cantanteRepo.buscarCantantePorNombreNative(nombre);
 	}
 
+	@Override
+	public Cantante buscarPorNombreNamedNative(String nombre) {
+		// TODO Auto-generated method stub
+		return this.cantanteRepo.buscarCantantePorNombreNamedNative(nombre);
+	}
+
+	@Override
+	public Cantante buscarPorNombreCriteriaAPI(String nombre) {
+		// TODO Auto-generated method stub
+		return this.cantanteRepo.buscarCantantePorNombreCriteriaAPI(nombre);
+	}
+
 }
