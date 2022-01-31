@@ -60,4 +60,16 @@ public class CelularServiceImpl implements ICelularService{
 		return this.celularRepo.buscarCelularPorMarcaNative(marca);
 	}
 
+	@Override
+	public Celular buscarPorMarcaNamedNative(String marca) {
+		// TODO Auto-generated method stub
+		return this.celularRepo.buscarCelularPorMarcaNamedNative(marca);
+	}
+
+	@Override
+	public Celular buscarPorMarcaCriteriaAPI(String marca) {
+		// TODO Auto-generated method stub
+		return this.celularRepo.buscarCelularPorMarcaCriteriaAPI(marca);
+	}
+
 }

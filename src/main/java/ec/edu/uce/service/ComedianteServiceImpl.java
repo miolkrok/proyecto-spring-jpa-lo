@@ -60,4 +60,16 @@ public class ComedianteServiceImpl implements IComedianteService{
 		return this.comedianteRepo.buscarComediantePorNombreNative(nombre);
 	}
 
+	@Override
+	public Comediante buscarPorNombreNamedNative(String nombre) {
+		// TODO Auto-generated method stub
+		return this.comedianteRepo.buscarComediantePorNombreNamedNative(nombre);
+	}
+
+	@Override
+	public Comediante buscarPorNombreCriteriaAPI(String nombre) {
+		// TODO Auto-generated method stub
+		return this.comedianteRepo.buscarComediantePorNombreCriteriaAPI(nombre);
+	}
+
 }

@@ -1,5 +1,6 @@
 package ec.edu.uce.repository.jpa;
 
+import ec.edu.uce.modelo.jpa.Cantante;
 import ec.edu.uce.modelo.jpa.Comediante;
 
 
@@ -13,4 +14,6 @@ public interface IComedianteRepo {
 	Comediante buscarComediantePorNombreTyped(String nombre);
 	Comediante buscarComediantePorNombreNamed(String nombre);
 	Comediante buscarComediantePorNombreNative(String nombre);
+	Comediante buscarComediantePorNombreNamedNative(String nombre);
+	Comediante buscarComediantePorNombreCriteriaAPI(String nombre);
 }

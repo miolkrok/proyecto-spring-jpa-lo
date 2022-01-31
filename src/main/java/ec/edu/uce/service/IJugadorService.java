@@ -11,4 +11,6 @@ public interface IJugadorService {
 	Jugador buscarPorNombreTyped(String nombre);
 	Jugador buscarPorNombreNamed(String nombre);
 	Jugador buscarPorNombreNative(String nombre);
+	Jugador buscarPorNombreNamedNative(String nombre);
+	Jugador buscarPorNombreCriteriaAPI(String nombre);
 }

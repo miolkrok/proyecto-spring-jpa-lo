@@ -11,4 +11,6 @@ public interface IComedianteService {
 	Comediante buscarPorNombreTyped(String nombre);
 	Comediante buscarPorNombreNamed(String nombre);
 	Comediante buscarPorNombreNative(String nombre);
+	Comediante buscarPorNombreNamedNative(String nombre);
+	Comediante buscarPorNombreCriteriaAPI(String nombre);
 }

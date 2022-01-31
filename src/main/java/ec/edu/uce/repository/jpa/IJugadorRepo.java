@@ -1,5 +1,6 @@
 package ec.edu.uce.repository.jpa;
 
+import ec.edu.uce.modelo.jpa.Cantante;
 import ec.edu.uce.modelo.jpa.Jugador;
 
 public interface IJugadorRepo {
@@ -12,4 +13,6 @@ public interface IJugadorRepo {
 	Jugador buscarJugadorPorNombreTyped(String nombre);
 	Jugador buscarJugadorPorNombreNamed(String nombre);
 	Jugador buscarJugadorPorNombreNative(String nombre);
+	Jugador buscarJugadorPorNombreNamedNative(String nombre);
+	Jugador buscarJugadorPorNombreCriteriaAPI(String nombre);
 }

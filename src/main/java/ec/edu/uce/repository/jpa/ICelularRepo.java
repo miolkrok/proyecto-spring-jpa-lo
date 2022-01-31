@@ -12,4 +12,6 @@ public interface ICelularRepo {
 	Celular buscarCelularPorMarcaTyped(String marca);
 	Celular buscarCelularPorMarcaNamed(String marca);
 	Celular buscarCelularPorMarcaNative(String marca);
+	Celular buscarCelularPorMarcaNamedNative(String marca);
+	Celular buscarCelularPorMarcaCriteriaAPI(String marca);
 }
