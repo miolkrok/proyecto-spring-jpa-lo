@@ -516,7 +516,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		this.facturaService.guardarFactura(miFactura);
 		
-//		//////////////////////FACTURA/////////////////////
+//		//////////////////////PEDIDO/////////////////////
 
 
 		Pedido miPedido = new Pedido();
