@@ -28,11 +28,15 @@ import ec.edu.uce.modelo.Receta;
 import ec.edu.uce.modelo.jpa.Actor;
 import ec.edu.uce.modelo.jpa.Cantante;
 import ec.edu.uce.modelo.jpa.Celular;
+import ec.edu.uce.modelo.jpa.Ciudadano;
 import ec.edu.uce.modelo.jpa.Comediante;
 import ec.edu.uce.modelo.jpa.DetalleFactura;
+import ec.edu.uce.modelo.jpa.DetallePedido;
+import ec.edu.uce.modelo.jpa.Empleado;
 import ec.edu.uce.modelo.jpa.Factura;
 import ec.edu.uce.modelo.jpa.Guardia;
 import ec.edu.uce.modelo.jpa.Jugador;
+import ec.edu.uce.modelo.jpa.Pedido;
 import ec.edu.uce.repository.jpa.GuardiaRepoImpl;
 import ec.edu.uce.service.IActorService;
 import ec.edu.uce.service.IAlmacenRopaService;
@@ -40,6 +44,7 @@ import ec.edu.uce.service.ICantanteService;
 import ec.edu.uce.service.ICarrerasService;
 import ec.edu.uce.service.ICarroService;
 import ec.edu.uce.service.ICelularService;
+import ec.edu.uce.service.ICiudadanoService;
 import ec.edu.uce.service.IClienteService;
 import ec.edu.uce.service.IComedianteService;
 import ec.edu.uce.service.IEmpleadosService;
@@ -50,6 +55,7 @@ import ec.edu.uce.service.IGuardiaService;
 import ec.edu.uce.service.IJugadorService;
 import ec.edu.uce.service.IMateriaService;
 import ec.edu.uce.service.IPacienteService;
+import ec.edu.uce.service.IPedidoService;
 import ec.edu.uce.service.IProductosRopaService;
 import ec.edu.uce.service.IProfesorService;
 import ec.edu.uce.service.IRadioService;
@@ -98,6 +104,10 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private IJugadorService jugadorService;
 	@Autowired
 	private IFacturaService facturaService;
+	@Autowired
+	private IPedidoService pedidoService;
+	@Autowired
+	private ICiudadanoService ciudadanoService;
 //	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoSpringJpaLoApplication.class, args);
@@ -481,35 +491,85 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		LOG.info("El Jugador es: " + juNombreNative);
 //		//////////////////////FACTURA/////////////////////
 
+//
+//		Factura miFactura = new Factura();
+//		miFactura.setCedula("1718496944");
+//		LocalDateTime miFecha = LocalDateTime.of(1989, Month.AUGUST,8,12,45);
+//		miFactura.setNumero("2502-1254-1352-9743");
+//		miFactura.setFecha(miFecha);
+//		
+//		
+//		//vamos a construir la lista de detalles
+//		List<DetalleFactura> detalles = new ArrayList<>();
+//		
+//		//primer detalle
+//		DetalleFactura d1 = new DetalleFactura();
+//		d1.setCantidad(2);
+//		d1.setPrecio(new BigDecimal(2.57));
+//		d1.setFactura(miFactura);
+//		//segundo detalle
+//		DetalleFactura d2 = new DetalleFactura();
+//		d2.setCantidad(3);
+//		d2.setPrecio(new BigDecimal(10.50));
+//		d2.setFactura(miFactura);
+//		
+//		detalles.add(d1);
+//		detalles.add(d2);
+//		
+//		miFactura.setDetallesd(detalles);
+//		
+//		
+//		this.facturaService.guardarFactura(miFactura);
+		
+//		//////////////////////PEDIDO/////////////////////
 
-		Factura miFactura = new Factura();
-		miFactura.setCedula("1718496944");
-		LocalDateTime miFecha = LocalDateTime.of(1989, Month.AUGUST,8,12,45);
-		miFactura.setNumero("2502-1254-1352-9743");
-		miFactura.setFecha(miFecha);
-		
-		
-		//vamos a construir la lista de detalles
-		List<DetalleFactura> detalles = new ArrayList<>();
+//
+//		Pedido miPedido = new Pedido();
+//		miPedido.setCedula("1718496944");
+//		LocalDateTime miFechaPedido = LocalDateTime.of(1989, Month.AUGUST,8,12,45);
+//		miPedido.setNumero("2502-1254-1352-9743");
+//		miPedido.setFecha(miFechaPedido);
+//		
+//		
+//		//vamos a construir la lista de detalles
+//		List<DetallePedido> detallesPedido = new ArrayList<>();
+//		
+//		//primer detalle
+//		DetallePedido ped1 = new DetallePedido();
+//		ped1.setCantidad(2);
+//		ped1.setPrecio(new BigDecimal(2.57));
+//		ped1.setPedido(miPedido);
+//		//segundo detalle
+//		DetallePedido ped2 = new DetallePedido();
+//		ped2.setCantidad(3);
+//		ped2.setPrecio(new BigDecimal(10.50));
+//		ped2.setPedido(miPedido);
+//		
+//		detallesPedido.add(ped1);
+//		detallesPedido.add(ped2);
+//		
+//		
+//		miPedido.setDetallesPed(detallesPedido);
+//		
+//		
+//		this.pedidoService.guardarPedido(miPedido);
+//		//////////////////////PEDIDO/////////////////////
+
+		Ciudadano miCiudadano = new Ciudadano();
+		miCiudadano.setNombre("luis");
+		miCiudadano.setApellido("ortiz");
 		
 		//primer detalle
-		DetalleFactura d1 = new DetalleFactura();
-		d1.setCantidad(2);
-		d1.setPrecio(new BigDecimal(2.57));
-		d1.setFactura(miFactura);
-		//segundo detalle
-		DetalleFactura d2 = new DetalleFactura();
-		d2.setCantidad(3);
-		d2.setPrecio(new BigDecimal(10.50));
-		d2.setFactura(miFactura);
-		
-		detalles.add(d1);
-		detalles.add(d2);
-		
-		miFactura.setDetallesd(detalles);
+		Empleado empl1 = new Empleado();
+		empl1.setIess("10asad4");
+		empl1.setSalario(new BigDecimal(10.50));
+		empl1.setCiudadano(miCiudadano);
 		
 		
-		this.facturaService.guardarFactura(miFactura);
+		
+		miCiudadano.setEmpleado(empl1);
+	
+		this.ciudadanoService.guardarCiudadano(miCiudadano);
 		
 	}
 

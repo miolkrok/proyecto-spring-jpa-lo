@@ -14,30 +14,29 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="factura")
-public class Factura {
-
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_factura")
-	@SequenceGenerator(name = "seq_factura", sequenceName = "seq_factura", allocationSize = 1)
+@Table(name="pedido")
+public class Pedido {
+	
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_pedido")
+	@SequenceGenerator(name = "seq_pedido", sequenceName = "seq_pedido", allocationSize = 1)
 	@Id
-	@Column(name="fact_id")
+	@Column(name="pedi_id")
 	private Integer id;
 	
-	@Column(name="fact_numero")
+	@Column(name="pedi_numero")
 	private String numero;
 	
-	@Column(name="fact_cedula")
+	@Column(name="pedi_cedula")
 	private String cedula;
 
-	@Column(name="fact_fecha", columnDefinition = "TIMESTAMP")
+	@Column(name="pedi_fecha", columnDefinition = "TIMESTAMP")
 	private LocalDateTime fecha;
 	
 	//como represento que la factura puede tener muchos detalles
-	@OneToMany(mappedBy = "factura",cascade=CascadeType.ALL)//De donde sale????
-	private List<DetalleFactura> detalles;
+	@OneToMany(mappedBy = "pedido",cascade=CascadeType.ALL)//De donde sale????
+	private List<DetallePedido> detallesPed;
 	
-	
-	//SET Y GET
+	//SET y GET
 
 	public Integer getId() {
 		return id;
@@ -71,17 +70,22 @@ public class Factura {
 		this.fecha = fecha;
 	}
 
-	public List<DetalleFactura> getDetalles() {
-		return detalles;
+	public List<DetallePedido> getDetallesPed() {
+		return detallesPed;
 	}
 
-	public void setDetallesd(List<DetalleFactura> detalles) {
-		this.detalles = detalles;
+	public void setDetallesPed(List<DetallePedido> detallesPed) {
+		this.detallesPed = detallesPed;
 	}
 
 	@Override
 	public String toString() {
-		return "Factura [id=" + id + ", numero=" + numero + ", cedula=" + cedula + ", fecha=" + fecha + "]";
+		return "Pedido [id=" + id + ", numero=" + numero + ", cedula=" + cedula + ", fecha=" + fecha + ", detallesPed="
+				+ detallesPed + "]";
 	}
+
+
+
 	
+
 }
