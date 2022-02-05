@@ -28,9 +28,11 @@ import ec.edu.uce.modelo.Receta;
 import ec.edu.uce.modelo.jpa.Actor;
 import ec.edu.uce.modelo.jpa.Cantante;
 import ec.edu.uce.modelo.jpa.Celular;
+import ec.edu.uce.modelo.jpa.Ciudadano;
 import ec.edu.uce.modelo.jpa.Comediante;
 import ec.edu.uce.modelo.jpa.DetalleFactura;
 import ec.edu.uce.modelo.jpa.DetallePedido;
+import ec.edu.uce.modelo.jpa.Empleado;
 import ec.edu.uce.modelo.jpa.Factura;
 import ec.edu.uce.modelo.jpa.Guardia;
 import ec.edu.uce.modelo.jpa.Jugador;
@@ -42,6 +44,7 @@ import ec.edu.uce.service.ICantanteService;
 import ec.edu.uce.service.ICarrerasService;
 import ec.edu.uce.service.ICarroService;
 import ec.edu.uce.service.ICelularService;
+import ec.edu.uce.service.ICiudadanoService;
 import ec.edu.uce.service.IClienteService;
 import ec.edu.uce.service.IComedianteService;
 import ec.edu.uce.service.IEmpleadosService;
@@ -103,6 +106,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private IFacturaService facturaService;
 	@Autowired
 	private IPedidoService pedidoService;
+	@Autowired
+	private ICiudadanoService ciudadanoService;
 //	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoSpringJpaLoApplication.class, args);
@@ -518,36 +523,54 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 		
 //		//////////////////////PEDIDO/////////////////////
 
+//
+//		Pedido miPedido = new Pedido();
+//		miPedido.setCedula("1718496944");
+//		LocalDateTime miFechaPedido = LocalDateTime.of(1989, Month.AUGUST,8,12,45);
+//		miPedido.setNumero("2502-1254-1352-9743");
+//		miPedido.setFecha(miFechaPedido);
+//		
+//		
+//		//vamos a construir la lista de detalles
+//		List<DetallePedido> detallesPedido = new ArrayList<>();
+//		
+//		//primer detalle
+//		DetallePedido ped1 = new DetallePedido();
+//		ped1.setCantidad(2);
+//		ped1.setPrecio(new BigDecimal(2.57));
+//		ped1.setPedido(miPedido);
+//		//segundo detalle
+//		DetallePedido ped2 = new DetallePedido();
+//		ped2.setCantidad(3);
+//		ped2.setPrecio(new BigDecimal(10.50));
+//		ped2.setPedido(miPedido);
+//		
+//		detallesPedido.add(ped1);
+//		detallesPedido.add(ped2);
+//		
+//		
+//		miPedido.setDetallesPed(detallesPedido);
+//		
+//		
+//		this.pedidoService.guardarPedido(miPedido);
+//		//////////////////////PEDIDO/////////////////////
 
-		Pedido miPedido = new Pedido();
-		miPedido.setCedula("1718496944");
-		LocalDateTime miFechaPedido = LocalDateTime.of(1989, Month.AUGUST,8,12,45);
-		miPedido.setNumero("2502-1254-1352-9743");
-		miPedido.setFecha(miFechaPedido);
-		
-		
-		//vamos a construir la lista de detalles
-		List<DetallePedido> detallesPedido = new ArrayList<>();
+		Ciudadano miCiudadano = new Ciudadano();
+		miCiudadano.setNombre("luis");
+		miCiudadano.setApellido("ortiz");
 		
 		//primer detalle
-		DetallePedido ped1 = new DetallePedido();
-		ped1.setCantidad(2);
-		ped1.setPrecio(new BigDecimal(2.57));
-		ped1.setPedido(miPedido);
-		//segundo detalle
-		DetallePedido ped2 = new DetallePedido();
-		ped2.setCantidad(3);
-		ped2.setPrecio(new BigDecimal(10.50));
-		ped2.setPedido(miPedido);
-		
-		detallesPedido.add(ped1);
-		detallesPedido.add(ped2);
+		Empleado empl1 = new Empleado();
+		empl1.setIess("10asad4");
+		empl1.setSalario(new BigDecimal(10.50));
+		empl1.setCiudadano(miCiudadano);
 		
 		
-		miPedido.setDetallesPed(detallesPedido);
 		
+		miCiudadano.setEmpleado(empl1);
+	
+		this.ciudadanoService.guardarCiudadano(miCiudadano);
 		
-		this.pedidoService.guardarPedido(miPedido);
 	}
 
 }
