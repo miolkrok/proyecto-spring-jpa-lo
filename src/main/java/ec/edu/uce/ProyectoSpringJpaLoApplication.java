@@ -26,6 +26,8 @@ import ec.edu.uce.modelo.Profesor;
 import ec.edu.uce.modelo.Radio;
 import ec.edu.uce.modelo.Receta;
 import ec.edu.uce.modelo.jpa.Actor;
+import ec.edu.uce.modelo.jpa.Auto;
+import ec.edu.uce.modelo.jpa.Boleto;
 import ec.edu.uce.modelo.jpa.Cantante;
 import ec.edu.uce.modelo.jpa.Celular;
 import ec.edu.uce.modelo.jpa.Ciudadano;
@@ -36,10 +38,13 @@ import ec.edu.uce.modelo.jpa.Empleado;
 import ec.edu.uce.modelo.jpa.Factura;
 import ec.edu.uce.modelo.jpa.Guardia;
 import ec.edu.uce.modelo.jpa.Jugador;
+import ec.edu.uce.modelo.jpa.Matricula;
+import ec.edu.uce.modelo.jpa.Pasajero;
 import ec.edu.uce.modelo.jpa.Pedido;
 import ec.edu.uce.repository.jpa.GuardiaRepoImpl;
 import ec.edu.uce.service.IActorService;
 import ec.edu.uce.service.IAlmacenRopaService;
+import ec.edu.uce.service.IAutoService;
 import ec.edu.uce.service.ICantanteService;
 import ec.edu.uce.service.ICarrerasService;
 import ec.edu.uce.service.ICarroService;
@@ -55,6 +60,7 @@ import ec.edu.uce.service.IGuardiaService;
 import ec.edu.uce.service.IJugadorService;
 import ec.edu.uce.service.IMateriaService;
 import ec.edu.uce.service.IPacienteService;
+import ec.edu.uce.service.IPasajeroService;
 import ec.edu.uce.service.IPedidoService;
 import ec.edu.uce.service.IProductosRopaService;
 import ec.edu.uce.service.IProfesorService;
@@ -108,6 +114,10 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private IPedidoService pedidoService;
 	@Autowired
 	private ICiudadanoService ciudadanoService;
+	@Autowired
+	private IAutoService autoService;
+	@Autowired
+	private IPasajeroService pasajeroService;
 //	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoSpringJpaLoApplication.class, args);
@@ -356,10 +366,10 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		Guardia gApellidoCriteriaAnd = this.guardiaService.buscarPorApellidoCriteriaAPIAnd("MVN","CCNU");
 //		LOG.info("El guardia es (CRITERIA AND): " + gApellidoCriteriaAnd);
 		//CRITERIA API OR
-		List<Guardia> listaGuardiaOr = this.guardiaService.buscarPorApellidoCriteriaAPIOr("MVN","villaflora");
-		for(Guardia g : listaGuardiaOr) {
-			LOG.info("El guardia es (CRITERIA OR): " + g);
-		}
+//		List<Guardia> listaGuardiaOr = this.guardiaService.buscarPorApellidoCriteriaAPIOr("MVN","villaflora");
+//		for(Guardia g : listaGuardiaOr) {
+//			LOG.info("El guardia es (CRITERIA OR): " + g);
+//		}
 		
 	
 		//////////////////////JPA ACTOR/////////////////////
@@ -554,23 +564,59 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		this.pedidoService.guardarPedido(miPedido);
 //		//////////////////////PEDIDO/////////////////////
+//
+//		Ciudadano miCiudadano = new Ciudadano();
+//		miCiudadano.setNombre("luis");
+//		miCiudadano.setApellido("ortiz");
+//		
+//		//primer detalle
+//		Empleado empl1 = new Empleado();
+//		empl1.setIess("10asad4");
+//		empl1.setSalario(new BigDecimal(10.50));
+//		empl1.setCiudadano(miCiudadano);
+//		
+//		
+//		
+//		miCiudadano.setEmpleado(empl1);
+//	
+//		this.ciudadanoService.guardarCiudadano(miCiudadano);
+		
+//		//////////////////////AUTO/////////////////////
 
-		Ciudadano miCiudadano = new Ciudadano();
-		miCiudadano.setNombre("luis");
-		miCiudadano.setApellido("ortiz");
+		Auto miAuto = new Auto();
+		miAuto.setPropietario("luis ortiz"); 
+		miAuto.setMarca("tesla");
 		
 		//primer detalle
-		Empleado empl1 = new Empleado();
-		empl1.setIess("10asad4");
-		empl1.setSalario(new BigDecimal(10.50));
-		empl1.setCiudadano(miCiudadano);
+		Matricula matr = new Matricula();
+		matr.setChasis("1849-9786-3565-8463");
+		matr.setCosto(new BigDecimal(400.50));
+		matr.setAuto(miAuto);
 		
 		
 		
-		miCiudadano.setEmpleado(empl1);
+		miAuto.setMatricula(matr);
 	
-		this.ciudadanoService.guardarCiudadano(miCiudadano);
-		
-	}
+		this.autoService.guardarAuto(miAuto);
+	
+//	//////////////////////PASAJERO/////////////////////
+
+	Pasajero miPasajero = new Pasajero();
+	miPasajero.setNombre("luis ortiz"); 
+	miPasajero.setCedula("1718496944");
+	
+	//primer detalle
+	Boleto bole = new Boleto();
+	bole.setAsiento("38A");
+	bole.setPrecio(new BigDecimal(2500.50));
+	bole.setDestino("QATAR");
+	bole.setPasajero(miPasajero);
+	
+	
+	
+	miPasajero.setBoleto(bole);
+
+	this.pasajeroService.guardarPasajero(miPasajero);
+}
 
 }
