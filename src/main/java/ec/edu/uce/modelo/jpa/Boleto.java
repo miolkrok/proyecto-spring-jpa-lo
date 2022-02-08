@@ -71,6 +71,12 @@ public class Boleto {
 	public void setPasajero(Pasajero pasajero) {
 		this.pasajero = pasajero;
 	}
+
+	@Override
+	public String toString() {
+		return "Boleto [id=" + id + ", asiento=" + asiento + ", precio=" + precio + ", destino=" + destino
+				+ ", pasajero=" + pasajero + "]";
+	}
 	
 	
 

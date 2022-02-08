@@ -51,5 +51,10 @@ public class Pasajero {
 	public void setBoleto(Boleto boleto) {
 		this.boleto = boleto;
 	}
+	@Override
+	public String toString() {
+		return "Pasajero [id=" + id + ", nombre=" + nombre + ", cedula=" + cedula + "]";
+	}
+
 
 }
