@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -75,13 +76,19 @@ public class Factura {
 		return detalles;
 	}
 
-	public void setDetallesd(List<DetalleFactura> detalles) {
+	public void setDetalles(List<DetalleFactura> detalles) {
 		this.detalles = detalles;
 	}
 
 	@Override
 	public String toString() {
-		return "Factura [id=" + id + ", numero=" + numero + ", cedula=" + cedula + ", fecha=" + fecha + "]";
+		return "Factura [id=" + id + ", numero=" + numero + ", cedula=" + cedula + ", fecha=" + fecha + ", detalles="
+				+ detalles + "]";
 	}
+
+//	@Override
+//	public String toString() {
+//		return "Factura [id=" + id + ", numero=" + numero + ", cedula=" + cedula + ", fecha=" + fecha + "]";
+//	}
 	
 }

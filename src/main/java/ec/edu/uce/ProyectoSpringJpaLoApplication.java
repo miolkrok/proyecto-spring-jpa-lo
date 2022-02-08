@@ -68,7 +68,7 @@ import ec.edu.uce.service.IRadioService;
 
 @SpringBootApplication
 public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
-	private static final Logger LOG =  LoggerFactory.getLogger(GuardiaRepoImpl.class);
+	private static final Logger LOG =  LoggerFactory.getLogger(ProyectoSpringJpaLoApplication.class);
 
 
 	@Autowired
@@ -531,6 +531,23 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		this.facturaService.guardarFactura(miFactura);
 		
+		List<Factura> listaFactura = this.facturaService.buscarPorFechaJOIN(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
+		LOG.info("La fecha es: " + listaFactura.size());
+		for(Factura f : listaFactura) {
+			LOG.info("La fecha es: " + f);
+		}
+		List<Factura> listaFacturaleft = this.facturaService.buscarPorFechaJOINLEFT(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
+		LOG.info("La fecha es: " + listaFacturaleft.size());
+		for(Factura f : listaFacturaleft) {
+			LOG.info("La fecha es: " + f);
+		}
+		List<Factura> listaFacturaWHERE = this.facturaService.buscarPorFechaWHERE(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
+		LOG.info("La fecha es: " + listaFacturaWHERE.size());
+		for(Factura f : listaFacturaWHERE) {
+			LOG.info("La fecha es: " + f);
+		}
+		
+		
 //		//////////////////////PEDIDO/////////////////////
 
 //
@@ -583,40 +600,40 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 		
 //		//////////////////////AUTO/////////////////////
 
-		Auto miAuto = new Auto();
-		miAuto.setPropietario("luis ortiz"); 
-		miAuto.setMarca("tesla");
-		
-		//primer detalle
-		Matricula matr = new Matricula();
-		matr.setChasis("1849-9786-3565-8463");
-		matr.setCosto(new BigDecimal(400.50));
-		matr.setAuto(miAuto);
-		
-		
-		
-		miAuto.setMatricula(matr);
-	
-		this.autoService.guardarAuto(miAuto);
+//		Auto miAuto = new Auto();
+//		miAuto.setPropietario("luis ortiz"); 
+//		miAuto.setMarca("tesla");
+//		
+//		//primer detalle
+//		Matricula matr = new Matricula();
+//		matr.setChasis("1849-9786-3565-8463");
+//		matr.setCosto(new BigDecimal(400.50));
+//		matr.setAuto(miAuto);
+//		
+//		
+//		
+//		miAuto.setMatricula(matr);
+//	
+//		this.autoService.guardarAuto(miAuto);
 	
 //	//////////////////////PASAJERO/////////////////////
 
-	Pasajero miPasajero = new Pasajero();
-	miPasajero.setNombre("luis ortiz"); 
-	miPasajero.setCedula("1718496944");
-	
-	//primer detalle
-	Boleto bole = new Boleto();
-	bole.setAsiento("38A");
-	bole.setPrecio(new BigDecimal(2500.50));
-	bole.setDestino("QATAR");
-	bole.setPasajero(miPasajero);
-	
-	
-	
-	miPasajero.setBoleto(bole);
-
-	this.pasajeroService.guardarPasajero(miPasajero);
+//	Pasajero miPasajero = new Pasajero();
+//	miPasajero.setNombre("luis ortiz"); 
+//	miPasajero.setCedula("1718496944");
+//	
+//	//primer detalle
+//	Boleto bole = new Boleto();
+//	bole.setAsiento("38A");
+//	bole.setPrecio(new BigDecimal(2500.50));
+//	bole.setDestino("QATAR");
+//	bole.setPasajero(miPasajero);
+//	
+//	
+//	
+//	miPasajero.setBoleto(bole);
+//
+//	this.pasajeroService.guardarPasajero(miPasajero);
 }
 
 }
