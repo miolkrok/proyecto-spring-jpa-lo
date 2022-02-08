@@ -531,21 +531,21 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		this.facturaService.guardarFactura(miFactura);
 		
-		List<Factura> listaFactura = this.facturaService.buscarPorFechaJOIN(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
-		LOG.info("La fecha es: " + listaFactura.size());
-		for(Factura f : listaFactura) {
-			LOG.info("La fecha es: " + f);
-		}
-		List<Factura> listaFacturaleft = this.facturaService.buscarPorFechaJOINLEFT(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
-		LOG.info("La fecha es: " + listaFacturaleft.size());
-		for(Factura f : listaFacturaleft) {
-			LOG.info("La fecha es: " + f);
-		}
-		List<Factura> listaFacturaWHERE = this.facturaService.buscarPorFechaWHERE(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
-		LOG.info("La fecha es: " + listaFacturaWHERE.size());
-		for(Factura f : listaFacturaWHERE) {
-			LOG.info("La fecha es: " + f);
-		}
+//		List<Factura> listaFactura = this.facturaService.buscarPorFechaJOIN(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
+//		LOG.info("La fecha es: " + listaFactura.size());
+//		for(Factura f : listaFactura) {
+//			LOG.info("La fecha es: " + f);
+//		}
+//		List<Factura> listaFacturaleft = this.facturaService.buscarPorFechaJOINLEFT(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
+//		LOG.info("La fecha es: " + listaFacturaleft.size());
+//		for(Factura f : listaFacturaleft) {
+//			LOG.info("La fecha es: " + f);
+//		}
+//		List<Factura> listaFacturaWHERE = this.facturaService.buscarPorFechaWHERE(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
+//		LOG.info("La fecha es: " + listaFacturaWHERE.size());
+//		for(Factura f : listaFacturaWHERE) {
+//			LOG.info("La fecha es: " + f);
+//		}
 		
 		
 //		//////////////////////PEDIDO/////////////////////
@@ -580,6 +580,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		
 //		this.pedidoService.guardarPedido(miPedido);
+		
 //		//////////////////////PEDIDO/////////////////////
 //
 //		Ciudadano miCiudadano = new Ciudadano();
@@ -634,6 +635,26 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //	miPasajero.setBoleto(bole);
 //
 //	this.pasajeroService.guardarPasajero(miPasajero);
+		List<Pasajero> listaPasajeros = this.pasajeroService.buscarPorCedulaJOIN("1718496944");
+		//LOG.info("La fecha es: " + listaPasajeros.size());
+		for(Pasajero f : listaPasajeros) {
+			LOG.info("EL pasajero es: " + f.toString());
+		}
+		List<Pasajero> listaPasajerosleft = this.pasajeroService.buscarPorCedulaJOINLEFT("1718496944");
+		LOG.info("longitud es: " + listaPasajerosleft.size());
+		for(Pasajero f : listaPasajerosleft) {
+			LOG.info("El pasajero es: " + f.toString());
+		}
+		List<Pasajero> listaPasajerosRight = this.pasajeroService.buscarPorCedulaJOINRIGHT("1718496944");
+		LOG.info("longitud es: " + listaPasajerosRight.size());
+		for(Pasajero f : listaPasajerosRight) {
+			LOG.info("El pasajero es: " + f.toString());
+		}
+		List<Pasajero> listaPasajerosWHERE = this.pasajeroService.buscarPorCedulaJOINWHERE("1718496944");
+		LOG.info("longitud es: " + listaPasajerosWHERE.size());
+		for(Pasajero f : listaPasajerosWHERE) {
+			LOG.info("El pasajero es: " + f.toString());
+		}
 }
 
 }
