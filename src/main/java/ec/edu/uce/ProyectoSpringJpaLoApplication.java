@@ -31,11 +31,13 @@ import ec.edu.uce.modelo.jpa.Boleto;
 import ec.edu.uce.modelo.jpa.Cantante;
 import ec.edu.uce.modelo.jpa.Celular;
 import ec.edu.uce.modelo.jpa.Ciudadano;
+import ec.edu.uce.modelo.jpa.Clienteee;
 import ec.edu.uce.modelo.jpa.Comediante;
 import ec.edu.uce.modelo.jpa.DetalleFactura;
 import ec.edu.uce.modelo.jpa.DetallePedido;
 import ec.edu.uce.modelo.jpa.Empleado;
 import ec.edu.uce.modelo.jpa.Factura;
+import ec.edu.uce.modelo.jpa.FacturaSencilla;
 import ec.edu.uce.modelo.jpa.Guardia;
 import ec.edu.uce.modelo.jpa.Jugador;
 import ec.edu.uce.modelo.jpa.Matricula;
@@ -51,7 +53,9 @@ import ec.edu.uce.service.ICarroService;
 import ec.edu.uce.service.ICelularService;
 import ec.edu.uce.service.ICiudadanoService;
 import ec.edu.uce.service.IClienteService;
+import ec.edu.uce.service.IClienteeeService;
 import ec.edu.uce.service.IComedianteService;
+import ec.edu.uce.service.IDetalleFacturaService;
 import ec.edu.uce.service.IEmpleadosService;
 import ec.edu.uce.service.IEstudianteService;
 import ec.edu.uce.service.IFacturaService;
@@ -118,6 +122,10 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private IAutoService autoService;
 	@Autowired
 	private IPasajeroService pasajeroService;
+	@Autowired
+	private IDetalleFacturaService detalleService;
+	@Autowired
+	private IClienteeeService clienteeeService;
 //	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoSpringJpaLoApplication.class, args);
@@ -546,6 +554,19 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		for(Factura f : listaFacturaWHERE) {
 //			LOG.info("La fecha es: " + f);
 //		}
+		List<Factura> listaFacturaFetch = this.facturaService.buscarPorFechaJOINFETCH(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
+		LOG.info("Longitud: " + listaFacturaFetch.size());
+		for(Factura f : listaFacturaFetch) {
+			LOG.info("Deta:" + f.getDetalles());
+			LOG.info("Factura: " + f);
+		}
+		
+		List<DetalleFactura> listaDetalleFactura = this.detalleService.buscarProductos(new BigDecimal(10.50),LocalDateTime.of(1989, Month.AUGUST,8,12,45));
+		LOG.info("Longitud: " + listaDetalleFactura.size());
+		for(DetalleFactura f : listaDetalleFactura) {
+			LOG.info("Deta:" + f.getFactura());
+			LOG.info("Factura: " + f);
+		}
 		
 		
 //		//////////////////////PEDIDO/////////////////////
@@ -635,26 +656,47 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //	miPasajero.setBoleto(bole);
 //
 //	this.pasajeroService.guardarPasajero(miPasajero);
-		List<Pasajero> listaPasajeros = this.pasajeroService.buscarPorCedulaJOIN("1718496944");
-		//LOG.info("La fecha es: " + listaPasajeros.size());
-		for(Pasajero f : listaPasajeros) {
-			LOG.info("EL pasajero es: " + f.toString());
-		}
-		List<Pasajero> listaPasajerosleft = this.pasajeroService.buscarPorCedulaJOINLEFT("1718496944");
-		LOG.info("longitud es: " + listaPasajerosleft.size());
-		for(Pasajero f : listaPasajerosleft) {
-			LOG.info("El pasajero es: " + f.toString());
-		}
-		List<Pasajero> listaPasajerosRight = this.pasajeroService.buscarPorCedulaJOINRIGHT("1718496944");
-		LOG.info("longitud es: " + listaPasajerosRight.size());
-		for(Pasajero f : listaPasajerosRight) {
-			LOG.info("El pasajero es: " + f.toString());
-		}
-		List<Pasajero> listaPasajerosWHERE = this.pasajeroService.buscarPorCedulaJOINWHERE("1718496944");
-		LOG.info("longitud es: " + listaPasajerosWHERE.size());
-		for(Pasajero f : listaPasajerosWHERE) {
-			LOG.info("El pasajero es: " + f.toString());
-		}
+//		List<Pasajero> listaPasajeros = this.pasajeroService.buscarPorCedulaJOIN("1718496944");
+//		//LOG.info("La fecha es: " + listaPasajeros.size());
+//		for(Pasajero f : listaPasajeros) {
+//			LOG.info("EL pasajero es: " + f.toString());
+//		}
+//		List<Pasajero> listaPasajerosleft = this.pasajeroService.buscarPorCedulaJOINLEFT("1718496944");
+//		LOG.info("longitud es: " + listaPasajerosleft.size());
+//		for(Pasajero f : listaPasajerosleft) {
+//			LOG.info("El pasajero es: " + f.toString());
+//		}
+//		List<Pasajero> listaPasajerosRight = this.pasajeroService.buscarPorCedulaJOINRIGHT("1718496944");
+//		LOG.info("longitud es: " + listaPasajerosRight.size());
+//		for(Pasajero f : listaPasajerosRight) {
+//			LOG.info("El pasajero es: " + f.toString());
+//		}
+//		List<Pasajero> listaPasajerosWHERE = this.pasajeroService.buscarPorCedulaJOINWHERE("1718496944");
+//		LOG.info("longitud es: " + listaPasajerosWHERE.size());
+//		for(Pasajero f : listaPasajerosWHERE) {
+//			LOG.info("El pasajero es: " + f.toString());
+//		}
+//		//////////////////////Clienteee/////////////////////
+		
+//		Clienteee miClienteee = new Clienteee();
+//		miClienteee.setNombre("elvis presley"); 
+//		
+//		List<String> listaT = new ArrayList<>();
+//		listaT.add("0997041978");
+//		listaT.add("0997041954");
+//		listaT.add("022473157");
+//		
+//		
+//
+//		miClienteee.setTelefonos(listaT);
+//	
+//		this.clienteeeService.guardar(miClienteee);
+		
+//		List<FacturaSencilla> lista = this.facturaService.buscarPorFechaSencilla(LocalDateTime.now());
+//		for(FacturaSencilla f : lista) {
+//			LOG.info(f.toString());
+//		}
+		
 }
 
 }
