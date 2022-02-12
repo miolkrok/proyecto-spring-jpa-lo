@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import ec.edu.uce.modelo.jpa.Factura;
+import ec.edu.uce.modelo.jpa.FacturaSencilla;
 
 @Repository
 @Transactional
@@ -85,6 +86,25 @@ public class FacturaRepoImpl implements IFacturaRepo {
 		return milistaFactura;
 	
 	}
+	@Override
+	public List<Factura> buscarPorFechaJOINFETCH(LocalDateTime fecha) {
+		// TODO Auto-generated method stub
+		TypedQuery<Factura> myQuery = this.entityManager
+				.createQuery("SELECT f FROM Factura f JOIN FETCH f.detalles d WHERE f.fecha <=:fecha",Factura.class);
+		myQuery.setParameter("fecha", fecha);
+		return myQuery.getResultList();
+		
+	}
+
+	@Override
+	public List<FacturaSencilla> buscarPorFechaSencilla(LocalDateTime fecha) {
+		// FacturaSencilla(Integer id, String numero)
+		TypedQuery<FacturaSencilla> myQuery = this.entityManager
+				.createQuery("SELECT NEW ec.edu.uce.modelo.jpa.FacturaSencilla(f.numero, f.cedula) FROM Factura f JOIN f.detalles d WHERE f.fecha <=:fecha",FacturaSencilla.class);
+		myQuery.setParameter("fecha", fecha);
+		return myQuery.getResultList();
+	}
+	
 
 
 }
