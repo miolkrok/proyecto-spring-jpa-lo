@@ -25,6 +25,7 @@ import ec.edu.uce.modelo.ProductosRopa;
 import ec.edu.uce.modelo.Profesor;
 import ec.edu.uce.modelo.Radio;
 import ec.edu.uce.modelo.Receta;
+import ec.edu.uce.modelo.Turista;
 import ec.edu.uce.modelo.jpa.Actor;
 import ec.edu.uce.modelo.jpa.Auto;
 import ec.edu.uce.modelo.jpa.Boleto;
@@ -69,6 +70,7 @@ import ec.edu.uce.service.IPedidoService;
 import ec.edu.uce.service.IProductosRopaService;
 import ec.edu.uce.service.IProfesorService;
 import ec.edu.uce.service.IRadioService;
+import ec.edu.uce.service.ITuristaService;
 
 @SpringBootApplication
 public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
@@ -126,6 +128,11 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private IDetalleFacturaService detalleService;
 	@Autowired
 	private IClienteeeService clienteeeService;
+	
+	///////////////////////////capa SERVICE DEL NEGOCIO////////////////////////////////////
+	@Autowired
+	private ITuristaService turistaService;
+	
 //	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoSpringJpaLoApplication.class, args);
@@ -554,19 +561,19 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		for(Factura f : listaFacturaWHERE) {
 //			LOG.info("La fecha es: " + f);
 //		}
-		List<Factura> listaFacturaFetch = this.facturaService.buscarPorFechaJOINFETCH(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
-		LOG.info("Longitud: " + listaFacturaFetch.size());
-		for(Factura f : listaFacturaFetch) {
-			LOG.info("Deta:" + f.getDetalles());
-			LOG.info("Factura: " + f);
-		}
-		
-		List<DetalleFactura> listaDetalleFactura = this.detalleService.buscarProductos(new BigDecimal(10.50),LocalDateTime.of(1989, Month.AUGUST,8,12,45));
-		LOG.info("Longitud: " + listaDetalleFactura.size());
-		for(DetalleFactura f : listaDetalleFactura) {
-			LOG.info("Deta:" + f.getFactura());
-			LOG.info("Factura: " + f);
-		}
+//		List<Factura> listaFacturaFetch = this.facturaService.buscarPorFechaJOINFETCH(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
+//		LOG.info("Longitud: " + listaFacturaFetch.size());
+//		for(Factura f : listaFacturaFetch) {
+//			LOG.info("Deta:" + f.getDetalles());
+//			LOG.info("Factura: " + f);
+//		}
+//		
+//		List<DetalleFactura> listaDetalleFactura = this.detalleService.buscarProductos(new BigDecimal(10.50),LocalDateTime.of(1989, Month.AUGUST,8,12,45));
+//		LOG.info("Longitud: " + listaDetalleFactura.size());
+//		for(DetalleFactura f : listaDetalleFactura) {
+//			LOG.info("Deta:" + f.getFactura());
+//			LOG.info("Factura: " + f);
+//		}
 		
 		
 //		//////////////////////PEDIDO/////////////////////
@@ -696,7 +703,24 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		for(FacturaSencilla f : lista) {
 //			LOG.info(f.toString());
 //		}
+//		Turista miTuris = new Turista();
+//		miTuris.setNombre("juancarlos");
+//		miTuris.setValor(new BigDecimal(30.0));
+//		miTuris.setAbono(new BigDecimal(10.0));
+//		
+//		this.turistaService.guardarTurista(miTuris);
 		
+//		Turista miTuris2 = new Turista();
+//		miTuris2.setNombre("antonio icaza");
+//		miTuris2.setValor(new BigDecimal(40.0));
+//		miTuris2.setAbono(new BigDecimal(5.0));
+//		
+//		this.turistaService.guardarTurista(miTuris2);
+		
+		List<Turista> listaTurista = this.turistaService.obtenerTodosTuristas("juancarlos");
+		for(Turista t : listaTurista) {
+			LOG.info("El turista buscado es: " + t);
+		}
 }
 
 }
