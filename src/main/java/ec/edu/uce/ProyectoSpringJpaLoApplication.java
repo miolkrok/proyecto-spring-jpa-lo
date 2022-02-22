@@ -726,21 +726,26 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //			LOG.info("El turista buscado es: " + t);
 //		}
 		///////////////////////////////////////TRANSACCION//////////////////////////////////////
-		CuentaBancaria cuentaBanc = new CuentaBancaria();
-		cuentaBanc.setNumero("1975169000");
-		cuentaBanc.setClienteCedula("1794985232");
-		cuentaBanc.setSaldo(new BigDecimal(350.0));
-		cuentaBanc.setTipo("ahorros");
+//		CuentaBancaria cuentaBanc = new CuentaBancaria();
+//		cuentaBanc.setNumero("1975169000");
+//		cuentaBanc.setClienteCedula("1794985232");
+//		cuentaBanc.setSaldo(new BigDecimal(350.0));
+//		cuentaBanc.setTipo("ahorros");
+//		
+//		this.cuentaBancariaService.insertarCuentaBancaria(cuentaBanc);
+//		
+//		CuentaBancaria cuentaBanc2 = new CuentaBancaria();
+//		cuentaBanc2.setNumero("197916900");
+//		cuentaBanc2.setClienteCedula("1249796265");
+//		cuentaBanc2.setSaldo(new BigDecimal(250.0));
+//		cuentaBanc2.setTipo("corriente");
+//		
+//		this.cuentaBancariaService.insertarCuentaBancaria(cuentaBanc2);
 		
-		this.cuentaBancariaService.insertarCuentaBancaria(cuentaBanc);
 		
-		CuentaBancaria cuentaBanc2 = new CuentaBancaria();
-		cuentaBanc2.setNumero("197916900");
-		cuentaBanc2.setClienteCedula("1794985232");
-		cuentaBanc2.setSaldo(new BigDecimal(250.0));
-		cuentaBanc2.setTipo("ahorros");
+		this.cuentaBancariaService.realizarTransferencia("197916900", "1975169000", new BigDecimal(20.0));
 		
-		this.cuentaBancariaService.insertarCuentaBancaria(cuentaBanc2);
+		
 }
 	
 	
