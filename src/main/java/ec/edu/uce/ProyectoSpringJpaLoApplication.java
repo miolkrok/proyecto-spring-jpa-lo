@@ -34,6 +34,7 @@ import ec.edu.uce.modelo.jpa.Celular;
 import ec.edu.uce.modelo.jpa.Ciudadano;
 import ec.edu.uce.modelo.jpa.Clienteee;
 import ec.edu.uce.modelo.jpa.Comediante;
+import ec.edu.uce.modelo.jpa.CuentaBancaria;
 import ec.edu.uce.modelo.jpa.DetalleFactura;
 import ec.edu.uce.modelo.jpa.DetallePedido;
 import ec.edu.uce.modelo.jpa.Empleado;
@@ -56,6 +57,7 @@ import ec.edu.uce.service.ICiudadanoService;
 import ec.edu.uce.service.IClienteService;
 import ec.edu.uce.service.IClienteeeService;
 import ec.edu.uce.service.IComedianteService;
+import ec.edu.uce.service.ICuentaBancariaService;
 import ec.edu.uce.service.IDetalleFacturaService;
 import ec.edu.uce.service.IEmpleadosService;
 import ec.edu.uce.service.IEstudianteService;
@@ -132,6 +134,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	///////////////////////////capa SERVICE DEL NEGOCIO////////////////////////////////////
 	@Autowired
 	private ITuristaService turistaService;
+	@Autowired
+	private ICuentaBancariaService cuentaBancariaService;
 	
 //	
 	public static void main(String[] args) {
@@ -717,10 +721,28 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		this.turistaService.guardarTurista(miTuris2);
 		
-		List<Turista> listaTurista = this.turistaService.obtenerTodosTuristas("juancarlos");
-		for(Turista t : listaTurista) {
-			LOG.info("El turista buscado es: " + t);
-		}
+//		List<Turista> listaTurista = this.turistaService.obtenerTodosTuristas("juancarlos");
+//		for(Turista t : listaTurista) {
+//			LOG.info("El turista buscado es: " + t);
+//		}
+		///////////////////////////////////////TRANSACCION//////////////////////////////////////
+		CuentaBancaria cuentaBanc = new CuentaBancaria();
+		cuentaBanc.setNumero("1975169000");
+		cuentaBanc.setClienteCedula("1794985232");
+		cuentaBanc.setSaldo(new BigDecimal(350.0));
+		cuentaBanc.setTipo("ahorros");
+		
+		this.cuentaBancariaService.insertarCuentaBancaria(cuentaBanc);
+		
+		CuentaBancaria cuentaBanc2 = new CuentaBancaria();
+		cuentaBanc2.setNumero("197916900");
+		cuentaBanc2.setClienteCedula("1794985232");
+		cuentaBanc2.setSaldo(new BigDecimal(250.0));
+		cuentaBanc2.setTipo("ahorros");
+		
+		this.cuentaBancariaService.insertarCuentaBancaria(cuentaBanc2);
 }
+	
+	
 
 }
