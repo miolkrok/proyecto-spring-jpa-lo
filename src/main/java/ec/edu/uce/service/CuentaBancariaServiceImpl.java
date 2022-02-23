@@ -62,12 +62,12 @@ public class CuentaBancariaServiceImpl implements ICuentaBancariaService{
 		this.cuentaBancariaRepo.actualizarCuentaBancaria(cuentaOri);
 		LOG.info("DA1");
 		LOG.info("AA2");
-		try {
+//		try {
 			this.cuentaBancariaRepo.actualizarCuentaBancaria2(cuentaDesti);
-
-		}catch(ArrayIndexOutOfBoundsException e) {
-			LOG.error("ERROR");
-		}
+//
+//		}catch(ArrayIndexOutOfBoundsException e) {
+//			LOG.error("ERROR");
+//		}
 		LOG.info("DA2");
 	}
 
