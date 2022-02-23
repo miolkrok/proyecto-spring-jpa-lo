@@ -16,7 +16,7 @@ import ec.edu.uce.modelo.jpa.Guardia;
 @Transactional
 public class CuentaBancariaRepoImpl implements ICuentaBancariaRepo{
 	
-	private static final Logger LOG =  LoggerFactory.getLogger(GuardiaRepoImpl.class);
+	private static final Logger LOG =  LoggerFactory.getLogger(CuentaBancariaRepoImpl.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -40,6 +40,20 @@ public class CuentaBancariaRepoImpl implements ICuentaBancariaRepo{
 		myTypedQuery.setParameter("valor", numero);
 		
 		return myTypedQuery.getSingleResult();
+	}
+
+	@Override
+	public void actualizarCuentaBancaria2(CuentaBancaria cuentaBancaria) {
+		// TODO Auto-generated method stub
+		this.entityManager.merge(cuentaBancaria);
+		
+//		try {
+		throw new ArrayIndexOutOfBoundsException();
+//		}catch(ArrayIndexOutOfBoundsException e) {
+//			LOG.error("ERROR");
+//		}
+
+
 	}
 
 }

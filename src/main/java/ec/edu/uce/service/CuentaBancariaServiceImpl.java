@@ -4,15 +4,21 @@ import java.math.BigDecimal;
 
 import javax.transaction.Transactional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ec.edu.uce.modelo.jpa.CuentaBancaria;
+import ec.edu.uce.repository.jpa.GuardiaRepoImpl;
 import ec.edu.uce.repository.jpa.ICuentaBancariaRepo;
 
 @Service
 public class CuentaBancariaServiceImpl implements ICuentaBancariaService{
 	
+	
+	private static final Logger LOG =  LoggerFactory.getLogger(CuentaBancariaServiceImpl.class);
+
 	@Autowired
 	private ICuentaBancariaRepo cuentaBancariaRepo;
 
@@ -52,9 +58,23 @@ public class CuentaBancariaServiceImpl implements ICuentaBancariaService{
 		cuentaDesti.setSaldo(nuevoSaldoDestino);
 //		cuentaDesti.setTipo(null);
 		
-		
+		LOG.info("AA1");
 		this.cuentaBancariaRepo.actualizarCuentaBancaria(cuentaOri);
-		this.cuentaBancariaRepo.actualizarCuentaBancaria(cuentaDesti);
+		LOG.info("DA1");
+		LOG.info("AA2");
+		try {
+			this.cuentaBancariaRepo.actualizarCuentaBancaria2(cuentaDesti);
+
+		}catch(ArrayIndexOutOfBoundsException e) {
+			LOG.error("ERROR");
+		}
+		LOG.info("DA2");
+	}
+
+	@Override
+	public void actualizar2CuentaBancaria(CuentaBancaria cuentaBancaria) {
+		// TODO Auto-generated method stub
+		this.cuentaBancariaRepo.actualizarCuentaBancaria2(cuentaBancaria);
 	}
 
 }

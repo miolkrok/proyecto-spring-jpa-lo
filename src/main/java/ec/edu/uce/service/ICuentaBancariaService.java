@@ -8,6 +8,7 @@ public interface ICuentaBancariaService {
 	
 	void insertarCuentaBancaria(CuentaBancaria cuentaBancaria);
 	void actualizarCuentaBancaria(CuentaBancaria cuentaBancaria);
+	void actualizar2CuentaBancaria(CuentaBancaria cuentaBancaria);
 	CuentaBancaria BuscarPorNumeroCuentaBanc(String numero);
 	void realizarTransferencia(String cuentaOrigen, String cuentaDestino,BigDecimal valorTransferir);
 
