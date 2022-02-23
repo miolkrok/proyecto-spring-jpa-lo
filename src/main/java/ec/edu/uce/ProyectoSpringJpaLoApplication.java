@@ -45,6 +45,7 @@ import ec.edu.uce.modelo.jpa.Jugador;
 import ec.edu.uce.modelo.jpa.Matricula;
 import ec.edu.uce.modelo.jpa.Pasajero;
 import ec.edu.uce.modelo.jpa.Pedido;
+import ec.edu.uce.modelo.jpa.TarjetaCredito;
 import ec.edu.uce.repository.jpa.GuardiaRepoImpl;
 import ec.edu.uce.service.IActorService;
 import ec.edu.uce.service.IAlmacenRopaService;
@@ -63,6 +64,7 @@ import ec.edu.uce.service.IEmpleadosService;
 import ec.edu.uce.service.IEstudianteService;
 import ec.edu.uce.service.IFacturaService;
 import ec.edu.uce.service.IGestorCitaService;
+import ec.edu.uce.service.IGestorTransaccionService;
 import ec.edu.uce.service.IGuardiaService;
 import ec.edu.uce.service.IJugadorService;
 import ec.edu.uce.service.IMateriaService;
@@ -72,6 +74,7 @@ import ec.edu.uce.service.IPedidoService;
 import ec.edu.uce.service.IProductosRopaService;
 import ec.edu.uce.service.IProfesorService;
 import ec.edu.uce.service.IRadioService;
+import ec.edu.uce.service.ITarjetaCreditoService;
 import ec.edu.uce.service.ITuristaService;
 
 @SpringBootApplication
@@ -136,6 +139,10 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private ITuristaService turistaService;
 	@Autowired
 	private ICuentaBancariaService cuentaBancariaService;
+	@Autowired
+	private ITarjetaCreditoService tarjetaService;
+	@Autowired
+	private IGestorTransaccionService gestService;
 	
 //	
 	public static void main(String[] args) {
@@ -744,8 +751,17 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 		
 		
 		this.cuentaBancariaService.realizarTransferencia("197916900", "1975169000", new BigDecimal(20.0));
+///////////////////////////////////////TRANSACCION TARJETA CREDITO//////////////////////////////////////
 		
+//		TarjetaCredito tarjetaCred = new TarjetaCredito();
+//		tarjetaCred.setId(2);
+//		tarjetaCred.setNumeroTarjeta("7487 4887 0157 9211");
+//		tarjetaCred.setCedulaPropietario("1718496944");
+//		tarjetaCred.setCupo(new BigDecimal(1000));
+//		
+//		this.tarjetaService.insertarTarjetaCredito(tarjetaCred);
 		
+//		this.gestService.realizarTransaccion(tarjetaCred,new BigDecimal(100));
 }
 	
 	
