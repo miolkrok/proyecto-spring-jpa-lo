@@ -750,18 +750,20 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		this.cuentaBancariaService.insertarCuentaBancaria(cuentaBanc2);
 		
 		
-		this.cuentaBancariaService.realizarTransferencia("197916900", "1975169000", new BigDecimal(20.0));
+//		this.cuentaBancariaService.realizarTransferencia("197916900", "1975169000", new BigDecimal(20.0));
 ///////////////////////////////////////TRANSACCION TARJETA CREDITO//////////////////////////////////////
 		
-//		TarjetaCredito tarjetaCred = new TarjetaCredito();
-//		tarjetaCred.setId(2);
-//		tarjetaCred.setNumeroTarjeta("7487 4887 0157 9211");
+		TarjetaCredito tarjetaCred = new TarjetaCredito();
+		tarjetaCred.setId(1);
 //		tarjetaCred.setCedulaPropietario("1718496944");
 //		tarjetaCred.setCupo(new BigDecimal(1000));
+//		tarjetaCred.setNumeroTarjeta("7487 4887 0157 9211");
+
+
 //		
 //		this.tarjetaService.insertarTarjetaCredito(tarjetaCred);
 		
-//		this.gestService.realizarTransaccion(tarjetaCred,new BigDecimal(100));
+		this.gestService.realizarTransaccion(tarjetaCred,new BigDecimal(100));
 }
 	
 	

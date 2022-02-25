@@ -29,12 +29,18 @@ public class TarjetaCreditoRepoImpl implements ITarjetaCreditoRepo {
 	public void actualizarTarjetaCredito(TarjetaCredito tarjetaCredito) {
 		// TODO Auto-generated method stub
 		this.entityManager.merge(tarjetaCredito);
+		try {
+		throw new ArrayIndexOutOfBoundsException();
+		}catch(ArrayIndexOutOfBoundsException e) {
+			LOG.error("ERROR");
+		}
+
 	}
 
 	@Override
-	public TarjetaCredito BuscarPorId(Integer Id) {
+	public TarjetaCredito BuscarPorId(Integer id) {
 		// TODO Auto-generated method stub
-		return this.entityManager.find(TarjetaCredito.class, Id);
+		return this.entityManager.find(TarjetaCredito.class, id);
 	}
 
 

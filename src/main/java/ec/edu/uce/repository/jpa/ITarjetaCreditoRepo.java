@@ -7,7 +7,7 @@ public interface ITarjetaCreditoRepo {
 	
 	void insertarTarjetaCredito(TarjetaCredito tarjetaCredito);
 	void actualizarTarjetaCredito(TarjetaCredito tarjetaCredito);
-	TarjetaCredito BuscarPorId(Integer Id);
+	TarjetaCredito BuscarPorId(Integer id);
 	
 
 }

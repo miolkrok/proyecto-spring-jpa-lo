@@ -34,7 +34,7 @@ public class GestorTransaccionServiceImpl implements IGestorTransaccionService{
         tarjeta.setCupo(tarjeta.getCupo().subtract(valorConsumo));
         tarjeta.getDetConsumo().add(consumo);
 
-        this.tarjetaService.actualizarTarjetaCredito(tarjetaCredito);
+        this.tarjetaService.actualizarTarjetaCredito(tarjeta);
 	}
 	
 
