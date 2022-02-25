@@ -29,11 +29,11 @@ public class TarjetaCreditoRepoImpl implements ITarjetaCreditoRepo {
 	public void actualizarTarjetaCredito(TarjetaCredito tarjetaCredito) {
 		// TODO Auto-generated method stub
 		this.entityManager.merge(tarjetaCredito);
-		try {
+//		try {
 		throw new ArrayIndexOutOfBoundsException();
-		}catch(ArrayIndexOutOfBoundsException e) {
-			LOG.error("ERROR");
-		}
+//		}catch(ArrayIndexOutOfBoundsException e) {
+//			LOG.error("ERROR");
+//		}
 
 	}
 
