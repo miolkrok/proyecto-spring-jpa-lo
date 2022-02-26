@@ -57,14 +57,17 @@ public class CuentaBancariaServiceImpl implements ICuentaBancariaService{
 		BigDecimal nuevoSaldoDestino = cuentaDesti.getSaldo().add(valorTransferir);
 		cuentaDesti.setSaldo(nuevoSaldoDestino);
 //		cuentaDesti.setTipo(null);
-		
+		try {
 		LOG.info("AA1");
 		this.cuentaBancariaRepo.actualizarCuentaBancaria(cuentaOri);
+		}catch(ArrayIndexOutOfBoundsException e) {
+		LOG.error("ERROR");
+		}
 		LOG.info("DA1");
 		LOG.info("AA2");
 //		try {
 			this.cuentaBancariaRepo.actualizarCuentaBancaria2(cuentaDesti);
-//
+
 //		}catch(ArrayIndexOutOfBoundsException e) {
 //			LOG.error("ERROR");
 //		}

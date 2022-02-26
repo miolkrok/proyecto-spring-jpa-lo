@@ -750,7 +750,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		this.cuentaBancariaService.insertarCuentaBancaria(cuentaBanc2);
 		
 		
-//		this.cuentaBancariaService.realizarTransferencia("197916900", "1975169000", new BigDecimal(20.0));
+		this.cuentaBancariaService.realizarTransferencia("197916900", "1975169000", new BigDecimal(20.0));
 ///////////////////////////////////////TRANSACCION TARJETA CREDITO//////////////////////////////////////
 		
 		TarjetaCredito tarjetaCred = new TarjetaCredito();
@@ -763,7 +763,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		this.tarjetaService.insertarTarjetaCredito(tarjetaCred);
 		
-		this.gestService.realizarTransaccion(tarjetaCred,new BigDecimal(100));
+//		this.gestService.realizarTransaccion(tarjetaCred,new BigDecimal(100));
 }
 	
 	
