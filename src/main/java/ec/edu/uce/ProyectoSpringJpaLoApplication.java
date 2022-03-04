@@ -26,6 +26,8 @@ import ec.edu.uce.modelo.Profesor;
 import ec.edu.uce.modelo.Radio;
 import ec.edu.uce.modelo.Receta;
 import ec.edu.uce.modelo.Turista;
+import ec.edu.uce.modelo.deberes.CuentaBancariaD;
+import ec.edu.uce.modelo.deberes.CuentaHabiente;
 import ec.edu.uce.modelo.jpa.Actor;
 import ec.edu.uce.modelo.jpa.Auto;
 import ec.edu.uce.modelo.jpa.Boleto;
@@ -76,6 +78,10 @@ import ec.edu.uce.service.IProfesorService;
 import ec.edu.uce.service.IRadioService;
 import ec.edu.uce.service.ITarjetaCreditoService;
 import ec.edu.uce.service.ITuristaService;
+import ec.edu.uce.service.deberes.ICajeroBancarioService;
+import ec.edu.uce.service.deberes.ICuentaBancariaDService;
+import ec.edu.uce.service.deberes.ICuentaHabienteService;
+import ec.edu.uce.service.deberes.IHistoricoRetirosService;
 
 @SpringBootApplication
 public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
@@ -143,6 +149,16 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private ITarjetaCreditoService tarjetaService;
 	@Autowired
 	private IGestorTransaccionService gestService;
+	
+///////////////////////////deber CAJERO////////////////////////////////////
+	@Autowired
+	private ICuentaBancariaDService cuentaBancDService;
+	@Autowired
+	private ICuentaHabienteService cuentaHabienteService;
+	@Autowired
+	private IHistoricoRetirosService histoRetirosService;
+	@Autowired
+	private ICajeroBancarioService cajeroBancService;
 	
 //	
 	public static void main(String[] args) {
@@ -750,7 +766,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		this.cuentaBancariaService.insertarCuentaBancaria(cuentaBanc2);
 		
 		
-		this.cuentaBancariaService.realizarTransferencia("197916900", "1975169000", new BigDecimal(20.0));
+//		this.cuentaBancariaService.realizarTransferencia("197916900", "1975169000", new BigDecimal(20.0));
 ///////////////////////////////////////TRANSACCION TARJETA CREDITO//////////////////////////////////////
 		
 		TarjetaCredito tarjetaCred = new TarjetaCredito();
@@ -764,6 +780,54 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		this.tarjetaService.insertarTarjetaCredito(tarjetaCred);
 		
 //		this.gestService.realizarTransaccion(tarjetaCred,new BigDecimal(100));
+		
+///////////////////////////////////////TRANSACCION CAJERO//////////////////////////////////////
+		
+//		CuentaHabiente cuentaHab = new CuentaHabiente();
+//		cuentaHab.setNombre("LUIS");
+//		cuentaHab.setApellido("ORTIZ");
+//		cuentaHab.setCedula("1718496944");
+//		
+//		List<CuentaBancariaD> cuentaDatos = new ArrayList<>();
+//		CuentaBancariaD cbd = new CuentaBancariaD();
+//		cbd.setNumeroCuenta("04716946190001");
+//		cbd.setSaldo(new BigDecimal(2000));
+//		cbd.setTipo("Ahorros");
+//		
+//		cuentaDatos.add(cbd);
+//		
+//		cuentaHab.setCuentBancD(cuentaDatos);
+//		this.cuentaHabienteService.insertarCuentaHabiente(cuentaHab);
+//		
+//		CuentaHabiente cuentaHab2 = new CuentaHabiente();
+//		cuentaHab2.setNombre("GABRIEL");
+//		cuentaHab2.setApellido("MESTANZA");
+//		cuentaHab2.setCedula("1718493910");
+//		
+//		List<CuentaBancariaD> cuentaDatos2 = new ArrayList<>();
+//		CuentaBancariaD cbd2 = new CuentaBancariaD();
+//		cbd2.setNumeroCuenta("172016106130");
+//		cbd2.setSaldo(new BigDecimal(3000));
+//		cbd2.setTipo("Ahorros");
+//		
+//		cuentaDatos2.add(cbd2);
+//		
+//		cuentaHab2.setCuentBancD(cuentaDatos2);
+//		this.cuentaHabienteService.insertarCuentaHabiente(cuentaHab2);
+//		//////////////////////FUNCIONALIDAD/////////////////////
+		//1
+//		List<CuentaBancariaD> listBanc = this.cajeroBancService.consultarCuenta("1718496944");
+////		listBanc.stream().forEach(c->LOG.info(c.toString()));
+////		LOG.info("La cuenta es: ");
+//		for(CuentaBancariaD f : listBanc) {
+//			LOG.info("La cuenta es: " + f.toString());
+//		}
+		//2
+		this.cajeroBancService.retirarDinero("04716946190001", new BigDecimal(20));
+		this.cajeroBancService.retirarDinero("172016106130", new BigDecimal(30));
+		//3
+//		this.cajeroBancService.consultarCuenta("172016106130");
+
 }
 	
 	
