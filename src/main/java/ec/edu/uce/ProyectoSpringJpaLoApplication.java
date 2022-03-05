@@ -765,8 +765,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		this.cuentaBancariaService.insertarCuentaBancaria(cuentaBanc2);
 		
-		
-//		this.cuentaBancariaService.realizarTransferencia("197916900", "1975169000", new BigDecimal(20.0));
+		this.cuentaBancariaService.realizarTransferenciaExpressInicial("197916900", "1975169000", new BigDecimal(20.0));
+
+//		this.cuentaBancariaService.realizarTransferenciaExpressInicialNoT("197916900", "1975169000", new BigDecimal(20.0));
+//		this.cuentaBancariaService.propagacionMandatory();
+//		this.cuentaBancariaService.enviarMail();
+//		this.cuentaBancariaService.enviarMailNoT();
 ///////////////////////////////////////TRANSACCION TARJETA CREDITO//////////////////////////////////////
 		
 		TarjetaCredito tarjetaCred = new TarjetaCredito();
@@ -823,8 +827,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //			LOG.info("La cuenta es: " + f.toString());
 //		}
 		//2
-		this.cajeroBancService.retirarDinero("04716946190001", new BigDecimal(20));
-		this.cajeroBancService.retirarDinero("172016106130", new BigDecimal(30));
+//		this.cajeroBancService.retirarDinero("04716946190001", new BigDecimal(20));
+//		this.cajeroBancService.retirarDinero("172016106130", new BigDecimal(30));
 		//3
 //		this.cajeroBancService.consultarCuenta("172016106130");
 

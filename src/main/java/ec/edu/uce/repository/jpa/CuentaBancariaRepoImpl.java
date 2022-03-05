@@ -27,16 +27,33 @@ public class CuentaBancariaRepoImpl implements ICuentaBancariaRepo{
 		// TODO Auto-generated method stub
 		this.entityManager.persist(cuentaBancaria);
 	}
+	@Transactional(value = TxType.SUPPORTS)
+	public void propagacionSupport() {
+		
+	}
 
-	@Override
+	public void propagacionMandatory() {
+		
+	}
+	@Transactional(value = TxType.NEVER)
+	public void enviarMail(String asunto) {
+		LOG.info("se envia el mail con asunto: " +asunto);
+	}
 	@Transactional
-	public void actualizarCuentaBancaria(CuentaBancaria cuentaBancaria) {
-		// TODO Auto-generated method stub
-		this.entityManager.merge(cuentaBancaria);
-		throw new ArrayIndexOutOfBoundsException();
+	public void enviarMailNoT(String asunto) {
+		LOG.info("se envia el mail ");
 	}
 
 	@Override
+	@Transactional(value = TxType.MANDATORY)
+	public void actualizarCuentaBancaria(CuentaBancaria cuentaBancaria) {
+		// TODO Auto-generated method stub
+		this.entityManager.merge(cuentaBancaria);
+		
+	}
+
+	@Override
+	@Transactional(value = TxType.NOT_SUPPORTED)
 	public CuentaBancaria BuscarPorNumeroCuentaBanc(String numero) {
 		// TODO Auto-generated method stub
 		TypedQuery<CuentaBancaria> myTypedQuery =  (TypedQuery<CuentaBancaria>) this.entityManager.createQuery("select c from CuentaBancaria c where c.numero=: valor");

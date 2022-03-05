@@ -9,5 +9,8 @@ public interface ICuentaBancariaRepo {
 	void actualizarCuentaBancaria(CuentaBancaria cuentaBancaria);
 	void actualizarCuentaBancaria2(CuentaBancaria cuentaBancaria);
 	CuentaBancaria BuscarPorNumeroCuentaBanc(String numero);
+	void propagacionMandatory();
+	void enviarMail(String asunto);
+	void enviarMailNoT(String asunto);
 
 }
