@@ -13,8 +13,6 @@ import org.springframework.stereotype.Repository;
 
 import ec.edu.uce.modelo.deberes.CuentaBancariaD;
 import ec.edu.uce.modelo.deberes.CuentaHabiente;
-import ec.edu.uce.modelo.jpa.Factura;
-import ec.edu.uce.modelo.jpa.Guardia;
 
 
 @Repository

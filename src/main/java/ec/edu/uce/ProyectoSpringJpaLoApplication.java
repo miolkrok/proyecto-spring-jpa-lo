@@ -16,7 +16,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import ec.edu.uce.modelo.AlmacenRopa;
 import ec.edu.uce.modelo.Carreras;
 import ec.edu.uce.modelo.Carro;
-import ec.edu.uce.modelo.Cliente;
+//import ec.edu.uce.modelo.Cliente;
+import ec.edu.uce.modelo.deberes.Cliente;
 import ec.edu.uce.modelo.Empleados;
 import ec.edu.uce.modelo.Estudiante;
 import ec.edu.uce.modelo.Materia;
@@ -28,6 +29,7 @@ import ec.edu.uce.modelo.Receta;
 import ec.edu.uce.modelo.Turista;
 import ec.edu.uce.modelo.deberes.CuentaBancariaD;
 import ec.edu.uce.modelo.deberes.CuentaHabiente;
+import ec.edu.uce.modelo.deberes.Membresia;
 import ec.edu.uce.modelo.jpa.Actor;
 import ec.edu.uce.modelo.jpa.Auto;
 import ec.edu.uce.modelo.jpa.Boleto;
@@ -57,7 +59,8 @@ import ec.edu.uce.service.ICarrerasService;
 import ec.edu.uce.service.ICarroService;
 import ec.edu.uce.service.ICelularService;
 import ec.edu.uce.service.ICiudadanoService;
-import ec.edu.uce.service.IClienteService;
+//import ec.edu.uce.service.IClienteService;
+import ec.edu.uce.service.deberes.IClienteService;
 import ec.edu.uce.service.IClienteeeService;
 import ec.edu.uce.service.IComedianteService;
 import ec.edu.uce.service.ICuentaBancariaService;
@@ -81,7 +84,9 @@ import ec.edu.uce.service.ITuristaService;
 import ec.edu.uce.service.deberes.ICajeroBancarioService;
 import ec.edu.uce.service.deberes.ICuentaBancariaDService;
 import ec.edu.uce.service.deberes.ICuentaHabienteService;
+import ec.edu.uce.service.deberes.IGestorGimnasioService;
 import ec.edu.uce.service.deberes.IHistoricoRetirosService;
+import ec.edu.uce.service.deberes.IMembresiaService;
 
 @SpringBootApplication
 public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
@@ -96,8 +101,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private ICarrerasService carrerasService;
 	@Autowired
 	private ICarroService carroService;
-	@Autowired
-	private IClienteService clienteService;
+
 	@Autowired
 	private IEmpleadosService empleadosService;
 	@Autowired
@@ -159,8 +163,14 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private IHistoricoRetirosService histoRetirosService;
 	@Autowired
 	private ICajeroBancarioService cajeroBancService;
-	
-//	
+///////////////////////////deber GIMNASIO////////////////////////////////////
+	@Autowired
+	private IClienteService clienteServiceG;
+	@Autowired
+	private IMembresiaService membresiaService;
+	@Autowired
+	private IGestorGimnasioService gestorGimService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoSpringJpaLoApplication.class, args);
 	}
@@ -250,7 +260,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		System.out.println("el almacen que esta buscando es el 4");
 //		System.out.println(c1);
 //////////////////////////CLIENTE/////////////////////////////
-		Cliente cliente = new Cliente();
+//		Cliente cliente = new Cliente();
 //		cliente.setIdCliente(9);
 //		cliente.setNombre("CRISTIAN ZARACHO");
 //		cliente.setEmail("CRISZA@gmail.com");
@@ -765,7 +775,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		
 //		this.cuentaBancariaService.insertarCuentaBancaria(cuentaBanc2);
 		
-		this.cuentaBancariaService.realizarTransferenciaExpressInicial("197916900", "1975169000", new BigDecimal(20.0));
+//		this.cuentaBancariaService.realizarTransferenciaExpressInicial("197916900", "1975169000", new BigDecimal(20.0));
 
 //		this.cuentaBancariaService.realizarTransferenciaExpressInicialNoT("197916900", "1975169000", new BigDecimal(20.0));
 //		this.cuentaBancariaService.propagacionMandatory();
@@ -831,7 +841,37 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		this.cajeroBancService.retirarDinero("172016106130", new BigDecimal(30));
 		//3
 //		this.cajeroBancService.consultarCuenta("172016106130");
+//		//////////////////////GIMNASIO FUNCIONALIDAD/////////////////////
+//		Cliente clie = new Cliente();
+//		clie.setCedula("1729056196");
+//		clie.setNombre("gabriel");
+//		clie.setApellido("jimenez");
+//		clie.setFechaNacimiento(LocalDateTime.of(1989, Month.AUGUST,8,12,45));
+//		clie.setEstado("P");
+//		
+//		this.clienteServiceG.insertarCliente(clie);
+//		
+//		Cliente clie1 = new Cliente();
+//		clie1.setCedula("1718496944");
+//		clie1.setNombre("Luis");
+//		clie1.setApellido("Ortiz");
+//		clie1.setFechaNacimiento(LocalDateTime.of(1997, Month.MAY,19,12,45));
+//		clie1.setEstado("N");
+//		
+//		this.clienteServiceG.insertarCliente(clie1);
+		
 
+//		Membresia membresia = new Membresia();
+//		membresia.setCodigo("2122");
+//		membresia.setNombre("Plan POWER");
+//		membresia.setValor(new BigDecimal(29.99));
+//		membresia.setVigencia("30 dias");
+//		membresia.setCantidad(0);
+//		this.membresiaService.insertarMembresia(membresia);
+		
+		this.gestorGimService.pagarMembresia("1718496944", "2122");
+
+		
 }
 	
 	
