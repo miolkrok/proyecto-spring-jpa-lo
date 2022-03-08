@@ -51,6 +51,7 @@ import ec.edu.uce.modelo.jpa.Pasajero;
 import ec.edu.uce.modelo.jpa.Pedido;
 import ec.edu.uce.modelo.jpa.TarjetaCredito;
 import ec.edu.uce.repository.jpa.GuardiaRepoImpl;
+import ec.edu.uce.service.CuentaBancariaFachadaServiceImpl;
 import ec.edu.uce.service.IActorService;
 import ec.edu.uce.service.IAlmacenRopaService;
 import ec.edu.uce.service.IAutoService;
@@ -87,6 +88,9 @@ import ec.edu.uce.service.deberes.ICuentaHabienteService;
 import ec.edu.uce.service.deberes.IGestorGimnasioService;
 import ec.edu.uce.service.deberes.IHistoricoRetirosService;
 import ec.edu.uce.service.deberes.IMembresiaService;
+//import ec.ude.uce.interfaces.funcionales.IPersonaFunction;
+//import ec.ude.uce.interfaces.funcionales.IPersonaFunctionUnaryOperator;
+//import ec.ude.uce.interfaces.funcionales.IPersonaUnaryOperator;
 
 @SpringBootApplication
 public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
@@ -163,6 +167,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private IHistoricoRetirosService histoRetirosService;
 	@Autowired
 	private ICajeroBancarioService cajeroBancService;
+	@Autowired
+	private CuentaBancariaFachadaServiceImpl bancaFachadaService; 
 ///////////////////////////deber GIMNASIO////////////////////////////////////
 	@Autowired
 	private IClienteService clienteServiceG;
@@ -170,7 +176,16 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 	private IMembresiaService membresiaService;
 	@Autowired
 	private IGestorGimnasioService gestorGimService;
+////////////////////Interfaces funcionales/////////////////////////
 
+//	@Autowired 
+//	private IPersonaUnaryOperator<String> personaUnaryOperator;
+//	@Autowired 
+//	private IPersonaFunction<String, Paciente> personafunction;
+//
+//	@Autowired 
+//	private IPersonaFunction<String, String> personafunction1;
+//	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoSpringJpaLoApplication.class, args);
 	}
@@ -777,7 +792,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 		
 //		this.cuentaBancariaService.realizarTransferenciaExpressInicial("197916900", "1975169000", new BigDecimal(20.0));
 
-//		this.cuentaBancariaService.realizarTransferenciaExpressInicialNoT("197916900", "1975169000", new BigDecimal(20.0));
+		this.bancaFachadaService.realizarTransferenciaExpressInicialNoT("197916900", "1975169000", new BigDecimal(20.0));
 //		this.cuentaBancariaService.propagacionMandatory();
 //		this.cuentaBancariaService.enviarMail();
 //		this.cuentaBancariaService.enviarMailNoT();
@@ -869,9 +884,12 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		membresia.setCantidad(0);
 //		this.membresiaService.insertarMembresia(membresia);
 		
-		this.gestorGimService.pagarMembresia("1718496944", "2122");
-
+//		this.gestorGimService.pagarMembresia("1718496944", "2122");
+////////////////////Interfaces funcionales/////////////////////////
 		
+//		String prueba = this.personaUnaryOperator.apply("A");
+//		Paciente paci1 = this.personafunction.apply("B");
+//		String prueba1 = this.personafunction1.apply("C");
 }
 	
 	

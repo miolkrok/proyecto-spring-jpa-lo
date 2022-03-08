@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 import ec.edu.uce.modelo.jpa.CuentaBancaria;
 import ec.edu.uce.repository.jpa.GuardiaRepoImpl;
@@ -107,6 +108,7 @@ public class CuentaBancariaServiceImpl implements ICuentaBancariaService{
 	public void realizarTransferenciaExpress(String cuentaOrigen, String cuentaDestino, BigDecimal valorTransferir) {
 		// TODO Auto-generated method stub
 		LOG.info("Ejecucion SUPPORTS antes");
+		LOG.info("Prueba 2: " +TransactionSynchronizationManager.isActualTransactionActive());
 		CuentaBancaria cuentaOri = this.cuentaBancariaRepo.BuscarPorNumeroCuentaBanc(cuentaOrigen);
 		CuentaBancaria cuentaDesti = this.cuentaBancariaRepo.BuscarPorNumeroCuentaBanc(cuentaDestino);
 		
