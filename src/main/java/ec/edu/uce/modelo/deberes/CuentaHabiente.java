@@ -69,8 +69,9 @@ public class CuentaHabiente {
 	@Override
 	public String toString() {
 		return "CuentaHabiente [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula
-				+ ", retiHistHab=" + retiHistHab + ", cuentBancD=" + cuentBancD + "]";
+				+  "]";
 	}
+
 
 	
 

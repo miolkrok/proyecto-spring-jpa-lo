@@ -65,8 +65,9 @@ public class HistoricoRetiros {
 	@Override
 	public String toString() {
 		return "HistoricoRetiros [id=" + id + ", montoRetiro=" + montoRetiro + ", fechaRetiro=" + fechaRetiro
-				+ ", cuentaHabiente=" + cuentaHabiente + ", cuentaBancaria=" + cuentaBancaria + "]";
+				+ "]";
 	}
+
 
 
 

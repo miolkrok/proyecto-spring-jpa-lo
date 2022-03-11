@@ -792,7 +792,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 		
 //		this.cuentaBancariaService.realizarTransferenciaExpressInicial("197916900", "1975169000", new BigDecimal(20.0));
 
-		this.bancaFachadaService.realizarTransferenciaExpressInicialNoT("197916900", "1975169000", new BigDecimal(20.0));
+//		this.bancaFachadaService.realizarTransferenciaExpressInicialNoT("197916900", "1975169000", new BigDecimal(20.0));
 //		this.cuentaBancariaService.propagacionMandatory();
 //		this.cuentaBancariaService.enviarMail();
 //		this.cuentaBancariaService.enviarMailNoT();
@@ -813,32 +813,33 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 ///////////////////////////////////////TRANSACCION CAJERO//////////////////////////////////////
 		
 //		CuentaHabiente cuentaHab = new CuentaHabiente();
-//		cuentaHab.setNombre("LUIS");
-//		cuentaHab.setApellido("ORTIZ");
-//		cuentaHab.setCedula("1718496944");
+//		cuentaHab.setNombre("GABRIEL");
+//		cuentaHab.setApellido("MISTRAL");
+//		cuentaHab.setCedula("1754496463");
 //		
 //		List<CuentaBancariaD> cuentaDatos = new ArrayList<>();
 //		CuentaBancariaD cbd = new CuentaBancariaD();
-//		cbd.setNumeroCuenta("04716946190001");
-//		cbd.setSaldo(new BigDecimal(2000));
+//		cbd.setNumeroCuenta("015446469496");
+//		cbd.setSaldo(new BigDecimal(3500));
 //		cbd.setTipo("Ahorros");
+//		cbd.setCuentaHabienteBanc(cuentaHab);
 //		
 //		cuentaDatos.add(cbd);
 //		
 //		cuentaHab.setCuentBancD(cuentaDatos);
 //		this.cuentaHabienteService.insertarCuentaHabiente(cuentaHab);
-//		
+////		
 //		CuentaHabiente cuentaHab2 = new CuentaHabiente();
-//		cuentaHab2.setNombre("GABRIEL");
-//		cuentaHab2.setApellido("MESTANZA");
-//		cuentaHab2.setCedula("1718493910");
+//		cuentaHab2.setNombre("DANIELA");
+//		cuentaHab2.setApellido("TROYA");
+//		cuentaHab2.setCedula("1749694977");
 //		
 //		List<CuentaBancariaD> cuentaDatos2 = new ArrayList<>();
 //		CuentaBancariaD cbd2 = new CuentaBancariaD();
-//		cbd2.setNumeroCuenta("172016106130");
+//		cbd2.setNumeroCuenta("031495269554");
 //		cbd2.setSaldo(new BigDecimal(3000));
 //		cbd2.setTipo("Ahorros");
-//		
+//		cbd2.setCuentaHabienteBanc(cuentaHab2);
 //		cuentaDatos2.add(cbd2);
 //		
 //		cuentaHab2.setCuentBancD(cuentaDatos2);
@@ -851,11 +852,21 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		for(CuentaBancariaD f : listBanc) {
 //			LOG.info("La cuenta es: " + f.toString());
 //		}
-		//2
-//		this.cajeroBancService.retirarDinero("04716946190001", new BigDecimal(20));
+////		2
+//		this.cajeroBancService.retirarDinero("031495269554", new BigDecimal(100));
+//		this.cajeroBancService.retirarDinero("031495269554", new BigDecimal(50));
+//		this.cajeroBancService.retirarDinero("031495269554", new BigDecimal(60));
+//		this.cajeroBancService.retirarDinero("031495269554", new BigDecimal(40));
+//		this.cajeroBancService.retirarDinero("031495269554", new BigDecimal(200));
+		
 //		this.cajeroBancService.retirarDinero("172016106130", new BigDecimal(30));
-		//3
-//		this.cajeroBancService.consultarCuenta("172016106130");
+////		3
+		
+//		LOG.info(" "+ this.cajeroBancService.consultarSaldoCuentaBancaria("172016106130"));
+//		//////////////////////FUNCIONALIDAD TAREA 25 INTERFACES FUNCIONALES/////////////////////
+		
+		this.cajeroBancService.reporteCuentaBancariaDVIP(new BigDecimal(1980));
+		this.cajeroBancService.reporteHistoricoRetiros(LocalDateTime.of(2022, Month.MARCH,10, 16, 14) , new BigDecimal(100));
 //		//////////////////////GIMNASIO FUNCIONALIDAD/////////////////////
 //		Cliente clie = new Cliente();
 //		clie.setCedula("1729056196");
@@ -890,6 +901,7 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		String prueba = this.personaUnaryOperator.apply("A");
 //		Paciente paci1 = this.personafunction.apply("B");
 //		String prueba1 = this.personafunction1.apply("C");
+		
 }
 	
 	

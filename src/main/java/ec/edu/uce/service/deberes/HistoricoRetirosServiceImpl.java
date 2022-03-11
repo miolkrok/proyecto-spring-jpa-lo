@@ -1,5 +1,7 @@
 package ec.edu.uce.service.deberes;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +36,12 @@ public class HistoricoRetirosServiceImpl implements IHistoricoRetirosService {
 	public void borrarHistoricoRetiros(Integer id) {
 		// TODO Auto-generated method stub
 		this.histRetiroRepo.borrarHistoricoRetiros(id);
+	}
+
+	@Override
+	public List<HistoricoRetiros> buscarReporteHistoricoRetiros() {
+		// TODO Auto-generated method stub
+		return this.histRetiroRepo.buscarReporteHistoricoRetiros();
 	}
 
 }

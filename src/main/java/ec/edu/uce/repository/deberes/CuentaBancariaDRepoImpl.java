@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import ec.edu.uce.modelo.deberes.CuentaBancariaD;
 import ec.edu.uce.modelo.deberes.CuentaHabiente;
+import ec.edu.uce.modelo.jpa.Factura;
 
 
 @Repository
@@ -57,15 +58,9 @@ public class CuentaBancariaDRepoImpl implements ICuentaBancariaDRepo{
 				.createQuery("SELECT c FROM CuentaBancariaD c WHERE c.cuentaHabienteBanc=:valor",CuentaBancariaD.class);
 		myQuery.setParameter("valor", cuentaHabiente);
 		
-		List<CuentaBancariaD> milistaBanc= myQuery.getResultList();
+		return myQuery.getResultList();
 	
 		
-		LOG.info("LONGITUD Repo:" + milistaBanc.size());
-		for(CuentaBancariaD f : milistaBanc) {
-			LOG.info("detalles: " + f.getCuentaHabienteBanc());//Obtenemos bajo demanda
-			LOG.info(f.toString());
-		}
-		return milistaBanc;
 	}
 
 	@Override
@@ -77,6 +72,25 @@ public class CuentaBancariaDRepoImpl implements ICuentaBancariaDRepo{
 		myQuery.setParameter("valor", numeroCuenta);
 		
 		return myQuery.getSingleResult();
+	}
+
+	@Override
+	public List<CuentaBancariaD> buscarCuentaBancariaDVIP() {
+		// TODO Auto-generated method stub
+		//SELECT f FROM Factura f LEFT JOIN f.detalles d WHERE f.fecha <=:fecha
+		TypedQuery<CuentaBancariaD> myQuery = 
+				this.entityManager
+				.createQuery("SELECT c FROM CuentaBancariaD c",CuentaBancariaD.class);
+		
+//		List<CuentaBancariaD> cuentaBancariaD = 
+//	
+//		
+////		LOG.info("LONGITUD Repo:" + milistaFactura.size());
+//		for(CuentaBancariaD f : cuentaBancariaD) {
+//			LOG.info("detalles: " + f.getCuentaHabienteBanc());//Obtenemos bajo demanda
+//			LOG.info(f.toString());
+//		}
+		return myQuery.getResultList();
 	}
 
 

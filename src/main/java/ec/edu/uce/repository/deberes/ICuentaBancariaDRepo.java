@@ -12,5 +12,6 @@ public interface ICuentaBancariaDRepo {
 	void borrarCuentaBancariaD(Integer id);
 	List<CuentaBancariaD> buscarCuentaBancariaDHab(CuentaHabiente cuentaHabiente);
 	CuentaBancariaD buscarCuentaBancariaDNum(String numeroCuenta);
+	List<CuentaBancariaD> buscarCuentaBancariaDVIP();
 
 }

@@ -76,8 +76,9 @@ public class CuentaBancariaD {
 	@Override
 	public String toString() {
 		return "CuentaBancariaD [id=" + id + ", numeroCuenta=" + numeroCuenta + ", saldo=" + saldo + ", tipo=" + tipo
-				+ ", cuentaHabienteBanc=" + cuentaHabienteBanc + ", retiHist=" + retiHist + "]";
+				+ ", retiHist=" + retiHist + ", cuentaHabienteBanc=" + cuentaHabienteBanc + "]";
 	}
+
 
 
 }

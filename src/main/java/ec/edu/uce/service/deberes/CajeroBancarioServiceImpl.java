@@ -14,13 +14,14 @@ import org.springframework.stereotype.Service;
 
 import ec.edu.uce.modelo.deberes.CuentaBancariaD;
 import ec.edu.uce.modelo.deberes.CuentaHabiente;
+import ec.edu.uce.modelo.deberes.CuentaHabienteVIPTO;
 import ec.edu.uce.modelo.deberes.HistoricoRetiros;
-import ec.edu.uce.repository.deberes.CuentaBancariaDRepoImpl;
+
 
 @Service
 public class CajeroBancarioServiceImpl implements ICajeroBancarioService{
 	
-	private static final Logger LOG =  LoggerFactory.getLogger(CuentaBancariaDRepoImpl.class);
+	private static final Logger LOG =  LoggerFactory.getLogger(CajeroBancarioServiceImpl.class);
 
 	
 	@Autowired
@@ -70,6 +71,34 @@ public class CajeroBancarioServiceImpl implements ICajeroBancarioService{
 	public BigDecimal consultarSaldoCuentaBancaria(String numeroCuenta) {
 		// TODO Auto-generated method stub
 		return this.cuentaBancService.buscarCuentaBancariaDNum(numeroCuenta).getSaldo();
+	}
+
+	@Override
+	public void reporteCuentaBancariaDVIP(BigDecimal saldo) {
+		// TODO Auto-generated method stub
+		List<CuentaBancariaD> cvip = this.cuentaBancService.buscarCuentaBancariaDVIP();
+		cvip.stream().filter(v->v.getSaldo().compareTo(saldo)==0).map(v->{
+			CuentaHabienteVIPTO vip = new CuentaHabienteVIPTO();
+			CuentaHabiente cha = v.getCuentaHabienteBanc();
+			vip.setCedula(cha.getCedula());
+			vip.setNombre(cha.getNombre());
+			vip.setApellido(cha.getApellido());
+			vip.setNumeroCuenta(v.getNumeroCuenta());
+			vip.setTipo(v.getTipo());
+			vip.setSaldo(v.getSaldo());
+			return vip;
+		}).forEach(v -> LOG.info(v.toString()));
+	}
+
+	@Override
+	public void reporteHistoricoRetiros(LocalDateTime fechaRetiro, BigDecimal montoRetiro) {
+		// TODO Auto-generated method stub
+		List<HistoricoRetiros> ret = this.histRetiroService.buscarReporteHistoricoRetiros();
+		ret.stream().filter(r->r.getFechaRetiro().isAfter(fechaRetiro) && r.getMontoRetiro()
+				.compareTo(montoRetiro) <=0).forEach(r -> LOG.info( +r.getId()
+				+ " - " +r.getCuentaHabiente().getCedula() +" - "+ r.getCuentaHabiente().getNombre()
+				+" - "+ r.getCuentaHabiente().getApellido() +" - " + r.getMontoRetiro() 
+				+ " - " + r.getFechaRetiro()));
 	}
 
 }

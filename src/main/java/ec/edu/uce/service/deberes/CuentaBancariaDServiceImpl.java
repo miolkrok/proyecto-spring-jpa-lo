@@ -51,4 +51,10 @@ public class CuentaBancariaDServiceImpl implements ICuentaBancariaDService{
 		return this.cuentaBanDRepo.buscarCuentaBancariaDNum(numeroCuenta);
 	}
 
+	@Override
+	public List<CuentaBancariaD> buscarCuentaBancariaDVIP() {
+		// TODO Auto-generated method stub
+		return this.cuentaBanDRepo.buscarCuentaBancariaDVIP();
+	}
+
 }
