@@ -2,6 +2,9 @@ package ec.ude.uce.interfaces.funcionales;
 
 public class ConsumoInterfacesFuncionales {
 	
+	//metodos que reciben una funcion/comportamiento
+	//metodos high order
+	//high order function
 	public String consumoSupplier(IPersonaSupplier<String> funcion) {
 		return funcion.get();
 	}

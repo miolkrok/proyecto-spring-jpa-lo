@@ -66,7 +66,6 @@ public class MainFuncional {
 		//UnaryFunctionOperator
 		//listanumeros
 		listaNumeros.stream().reduce(null);
-		
 	}
 
 }
