@@ -30,6 +30,7 @@ import ec.edu.uce.modelo.Turista;
 import ec.edu.uce.modelo.deberes.CuentaBancariaD;
 import ec.edu.uce.modelo.deberes.CuentaHabiente;
 import ec.edu.uce.modelo.deberes.Membresia;
+import ec.edu.uce.modelo.deberes.PolizaSeguro;
 import ec.edu.uce.modelo.jpa.Actor;
 import ec.edu.uce.modelo.jpa.Auto;
 import ec.edu.uce.modelo.jpa.Boleto;
@@ -88,6 +89,7 @@ import ec.edu.uce.service.deberes.ICuentaHabienteService;
 import ec.edu.uce.service.deberes.IGestorGimnasioService;
 import ec.edu.uce.service.deberes.IHistoricoRetirosService;
 import ec.edu.uce.service.deberes.IMembresiaService;
+import ec.edu.uce.service.deberes.IPolizaSeguroService;
 //import ec.ude.uce.interfaces.funcionales.IPersonaFunction;
 //import ec.ude.uce.interfaces.funcionales.IPersonaFunctionUnaryOperator;
 //import ec.ude.uce.interfaces.funcionales.IPersonaUnaryOperator;
@@ -185,7 +187,13 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //
 //	@Autowired 
 //	private IPersonaFunction<String, String> personafunction1;
+	
 //	
+	
+////////////////////POLIZA SEGURO TEST JUNIT/////////////////////////
+	@Autowired
+	private IPolizaSeguroService polizaService;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoSpringJpaLoApplication.class, args);
 	}
@@ -865,8 +873,8 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		LOG.info(" "+ this.cajeroBancService.consultarSaldoCuentaBancaria("172016106130"));
 //		//////////////////////FUNCIONALIDAD TAREA 25 INTERFACES FUNCIONALES/////////////////////
 		
-		this.cajeroBancService.reporteCuentaBancariaDVIP(new BigDecimal(1980));
-		this.cajeroBancService.reporteHistoricoRetiros(LocalDateTime.of(2022, Month.MARCH,10, 16, 14) , new BigDecimal(100));
+//		this.cajeroBancService.reporteCuentaBancariaDVIP(new BigDecimal(1980));
+//		this.cajeroBancService.reporteHistoricoRetiros(LocalDateTime.of(2022, Month.MARCH,10, 16, 14) , new BigDecimal(100));
 //		//////////////////////GIMNASIO FUNCIONALIDAD/////////////////////
 //		Cliente clie = new Cliente();
 //		clie.setCedula("1729056196");
@@ -901,7 +909,16 @@ public class ProyectoSpringJpaLoApplication implements CommandLineRunner{
 //		String prueba = this.personaUnaryOperator.apply("A");
 //		Paciente paci1 = this.personafunction.apply("B");
 //		String prueba1 = this.personafunction1.apply("C");
+////////////////////POLIZA SEGURO TEST JUNIT/////////////////////////
 		
+//		PolizaSeguro pols = new PolizaSeguro();
+//		pols.setNumero("1234");
+//		pols.setValor(new BigDecimal(2000));
+//		pols.setFechaEmision(LocalDateTime.now());
+//		pols.setFechaVigencia(LocalDateTime.of(2023, Month.APRIL, 17, 11, 10));
+//		pols.setEstado("P");
+//		
+//		this.polizaService.insertarPolizaSeguro(pols);
 }
 	
 	
